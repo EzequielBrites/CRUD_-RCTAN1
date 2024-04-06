@@ -46,7 +46,7 @@ namespace CRUD_RCTAN1.Formularios
             int resultado = accesoBD.VerificarUsuario(txtUsuario.Text, txtContraseña.Text);
             if (resultado == 1)
             {
-                FrmCargaPersonal carga = new FrmCargaPersonal();
+                FrmPrincipal carga = new FrmPrincipal();
                 this.Hide();
                 carga.ShowDialog();
             }

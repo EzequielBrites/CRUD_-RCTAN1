@@ -61,7 +61,7 @@ namespace CRUD_RCTAN1.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Data Source=DESKTOP-US23EPI\SQLEXPRESS;Initial Catalog=RcTan1;Integrated Security=True;Encrypt=False;.
+        ///   Busca una cadena traducida similar a Data Source=DESKTOP-35TD46H\SQLEXPRESS;Initial Catalog=RcTan1;Integrated Security=True.
         /// </summary>
         internal static string cadenaConexion {
             get {
