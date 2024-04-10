@@ -38,17 +38,18 @@ namespace CRUD_RCTAN1
             CargarCombos(cboSecciones, "sp_consultar_secciones");
             CargarCombos(cboTipos, "sp_consultar_tipos_grados");
             limpiar();
-            
+            Habilitar(false);
             cboGrados.Enabled = false;
+            btnGuardar.Enabled = false;
 
         }
        
         private void limpiar()
         {
-            txbNombre.Text = "";
-            txbApellido.Text = "";
+            txtNombre.Text = "";
+            txtApellido.Text = "";
             dtpFechaNacimiento.Value = DateTime.Today;
-            txbDni.Text = "";
+            txtDni.Text = "";
             
                   
             rbFemenino.Checked = false;
@@ -118,14 +119,14 @@ namespace CRUD_RCTAN1
         {
             lparametros.Clear();
             Personal p = new Personal();
-            p.Nombre = txbNombre.Text;
-            p.Apellido = txbApellido.Text;
+            p.Nombre = txtNombre.Text;
+            p.Apellido = txtApellido.Text;
             if (rbMasculino.Checked == true)
                 p.Sexo = 1;
             else
                 p.Sexo = 2;
             
-            p.Dni = Convert.ToInt32(txbDni.Text);
+            p.Dni = Convert.ToInt32(txtDni.Text);
             
             p.RolAdministrativo = txtRolAdmin.Text;
             p.RolCombate = txtRolComb.Text;
@@ -158,6 +159,38 @@ namespace CRUD_RCTAN1
                 MessageBox.Show("Se registro con exito!");
                 limpiar();
             }
+
+        }
+
+        public void Habilitar(bool x)
+        {
+            txtDni.Enabled = x;
+            txtNombre.Enabled = x;
+            txtApellido.Enabled = x;
+            dtpFechaNacimiento.Enabled = x;
+            rbFemenino.Enabled = x;
+            rbMasculino.Enabled = x;
+            cboTipos.Enabled = x;
+            cboSubUnidad.Enabled = x;
+            txtRolAdmin.Enabled = x;
+            txtRolComb.Enabled = x;
+            cboSecciones.Enabled = x;
+            cboArmas.Enabled = x;
+
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Habilitar(true);
+            txtDni.Focus();
+            btnGuardar.Enabled = true;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            FrmBuscador buscador = new FrmBuscador();
+            ////this.Hide();
+            buscador.ShowDialog();
         }
     }
 }

@@ -42,10 +42,10 @@
             this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txbNombre = new System.Windows.Forms.TextBox();
-            this.txbApellido = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
             this.lblDni = new System.Windows.Forms.Label();
-            this.txbDni = new System.Windows.Forms.TextBox();
+            this.txtDni = new System.Windows.Forms.TextBox();
             this.lblFechaNacimiento = new System.Windows.Forms.Label();
             this.lblRolAdministrativo = new System.Windows.Forms.Label();
             this.lblRolDeCombate = new System.Windows.Forms.Label();
@@ -69,6 +69,7 @@
             this.lblArma = new System.Windows.Forms.Label();
             this.txtRolAdmin = new System.Windows.Forms.TextBox();
             this.txtRolComb = new System.Windows.Forms.TextBox();
+            this.btnNuevo = new System.Windows.Forms.Button();
             this.mspCargaPersonal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -167,23 +168,23 @@
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
-            // txbNombre
+            // txtNombre
             // 
-            this.txbNombre.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbNombre.Location = new System.Drawing.Point(219, 147);
-            this.txbNombre.Name = "txbNombre";
-            this.txbNombre.Size = new System.Drawing.Size(147, 22);
-            this.txbNombre.TabIndex = 1;
+            this.txtNombre.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Location = new System.Drawing.Point(219, 147);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(147, 22);
+            this.txtNombre.TabIndex = 1;
             // 
-            // txbApellido
+            // txtApellido
             // 
-            this.txbApellido.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txbApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbApellido.Location = new System.Drawing.Point(219, 206);
-            this.txbApellido.Name = "txbApellido";
-            this.txbApellido.Size = new System.Drawing.Size(147, 22);
-            this.txbApellido.TabIndex = 2;
+            this.txtApellido.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellido.Location = new System.Drawing.Point(219, 206);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(147, 22);
+            this.txtApellido.TabIndex = 2;
             // 
             // lblDni
             // 
@@ -197,14 +198,14 @@
             this.lblDni.TabIndex = 10;
             this.lblDni.Text = "DNI";
             // 
-            // txbDni
+            // txtDni
             // 
-            this.txbDni.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txbDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbDni.Location = new System.Drawing.Point(219, 88);
-            this.txbDni.Name = "txbDni";
-            this.txbDni.Size = new System.Drawing.Size(147, 22);
-            this.txbDni.TabIndex = 0;
+            this.txtDni.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDni.Location = new System.Drawing.Point(219, 88);
+            this.txtDni.Name = "txtDni";
+            this.txtDni.Size = new System.Drawing.Size(147, 22);
+            this.txtDni.TabIndex = 0;
             // 
             // lblFechaNacimiento
             // 
@@ -344,7 +345,7 @@
             // btnSalir
             // 
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(1096, 446);
+            this.btnSalir.Location = new System.Drawing.Point(1107, 446);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(81, 33);
             this.btnSalir.TabIndex = 21;
@@ -355,12 +356,13 @@
             // btnEditar
             // 
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(1006, 446);
+            this.btnEditar.Location = new System.Drawing.Point(1012, 446);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(81, 33);
             this.btnEditar.TabIndex = 20;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // rbMasculino
             // 
@@ -452,6 +454,17 @@
             this.txtRolComb.Size = new System.Drawing.Size(440, 22);
             this.txtRolComb.TabIndex = 15;
             // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.Location = new System.Drawing.Point(919, 446);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(81, 33);
+            this.btnNuevo.TabIndex = 42;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
             // FrmCargaPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -459,6 +472,7 @@
             this.BackColor = System.Drawing.SystemColors.Info;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1229, 515);
+            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.txtRolComb);
             this.Controls.Add(this.txtRolAdmin);
             this.Controls.Add(this.cboArmas);
@@ -481,10 +495,10 @@
             this.Controls.Add(this.lblRolDeCombate);
             this.Controls.Add(this.lblRolAdministrativo);
             this.Controls.Add(this.lblFechaNacimiento);
-            this.Controls.Add(this.txbDni);
+            this.Controls.Add(this.txtDni);
             this.Controls.Add(this.lblDni);
-            this.Controls.Add(this.txbApellido);
-            this.Controls.Add(this.txbNombre);
+            this.Controls.Add(this.txtApellido);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.mspCargaPersonal);
             this.Controls.Add(this.lblApellido);
@@ -513,10 +527,10 @@
         private System.Windows.Forms.ToolStripMenuItem verToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem herramientasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
-        private System.Windows.Forms.TextBox txbNombre;
-        private System.Windows.Forms.TextBox txbApellido;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label lblDni;
-        private System.Windows.Forms.TextBox txbDni;
+        private System.Windows.Forms.TextBox txtDni;
         private System.Windows.Forms.Label lblFechaNacimiento;
         private System.Windows.Forms.Label lblRolAdministrativo;
         private System.Windows.Forms.Label lblRolDeCombate;
@@ -541,6 +555,7 @@
         private System.Windows.Forms.Label lblArma;
         private System.Windows.Forms.TextBox txtRolAdmin;
         private System.Windows.Forms.TextBox txtRolComb;
+        private System.Windows.Forms.Button btnNuevo;
     }
 }
 
