@@ -1,4 +1,7 @@
 ﻿using System;
+using CRUD_RCTAN1.Datos;
+using CRUD_RCTAN1.Dominio;
+using CRUD_RCTAN1.Formularios;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +15,7 @@ namespace CRUD_RCTAN1.Formularios
 {
     public partial class Buscador : Form
     {
+        Dbhelper accesoBD = new Dbhelper();
         public Buscador()
         {
             InitializeComponent();
@@ -20,6 +24,13 @@ namespace CRUD_RCTAN1.Formularios
         private void Buscador_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            DataTable tabla = new DataTable();
+            tabla = accesoBD.Consultar_Persona("sp_consultar_persona",int.Parse(txtBuscador.Text));
+            
         }
     }
 }

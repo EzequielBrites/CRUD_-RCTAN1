@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnAceptarBuscador = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscador = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancelarBuscador = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnAceptarBuscador
+            // btnBuscar
             // 
-            this.btnAceptarBuscador.Location = new System.Drawing.Point(154, 119);
-            this.btnAceptarBuscador.Name = "btnAceptarBuscador";
-            this.btnAceptarBuscador.Size = new System.Drawing.Size(89, 36);
-            this.btnAceptarBuscador.TabIndex = 0;
-            this.btnAceptarBuscador.Text = "Aceptar";
-            this.btnAceptarBuscador.UseVisualStyleBackColor = true;
+            this.btnBuscar.Location = new System.Drawing.Point(154, 119);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(89, 36);
+            this.btnBuscar.TabIndex = 0;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtBuscador
             // 
@@ -81,7 +82,7 @@
             this.Controls.Add(this.btnCancelarBuscador);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBuscador);
-            this.Controls.Add(this.btnAceptarBuscador);
+            this.Controls.Add(this.btnBuscar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Buscador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -94,7 +95,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnAceptarBuscador;
+        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtBuscador;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCancelarBuscador;

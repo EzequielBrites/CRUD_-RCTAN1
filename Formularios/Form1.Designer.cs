@@ -527,10 +527,7 @@
         private System.Windows.Forms.ToolStripMenuItem verToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem herramientasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label lblDni;
-        private System.Windows.Forms.TextBox txtDni;
         private System.Windows.Forms.Label lblFechaNacimiento;
         private System.Windows.Forms.Label lblRolAdministrativo;
         private System.Windows.Forms.Label lblRolDeCombate;
@@ -556,6 +553,9 @@
         private System.Windows.Forms.TextBox txtRolAdmin;
         private System.Windows.Forms.TextBox txtRolComb;
         private System.Windows.Forms.Button btnNuevo;
+        public System.Windows.Forms.TextBox txtNombre;
+        public System.Windows.Forms.TextBox txtApellido;
+        public System.Windows.Forms.TextBox txtDni;
     }
 }
 

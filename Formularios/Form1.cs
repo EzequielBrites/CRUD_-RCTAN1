@@ -20,6 +20,7 @@ namespace CRUD_RCTAN1
     {
         
         Dbhelper accesoBD = new Dbhelper();
+        
         List<Parametro> lparametros;
         public FrmCargaPersonal()
         {
@@ -188,9 +189,10 @@ namespace CRUD_RCTAN1
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            FrmBuscador buscador = new FrmBuscador();
-            ////this.Hide();
-            buscador.ShowDialog();
+            Buscador buscador = new Buscador();
+            AddOwnedForm(buscador);
+            
+
         }
     }
 }

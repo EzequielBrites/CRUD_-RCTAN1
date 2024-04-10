@@ -128,6 +128,31 @@ namespace CRUD_RCTAN1.Datos
             return filasAfectadas;
         }
 
+        public DataTable Consultar_Persona(string SPName, int dni)
+        {
+            DataTable tabla = new DataTable();
 
+
+            try
+            {
+                conexion.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conexion;
+                cmd.CommandText = SPName;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Dni", dni);
+                tabla.Load(cmd.ExecuteReader());
+
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return tabla;
+        }
     }
 }
