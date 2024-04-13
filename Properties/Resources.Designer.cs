@@ -61,7 +61,7 @@ namespace CRUD_RCTAN1.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Data Source=DESKTOP-35TD46H\SQLEXPRESS;Initial Catalog=RcTan1;Integrated Security=True.
+        ///   Busca una cadena traducida similar a Server=tcp:operaciones1.database.windows.net,1433;Initial Catalog=RcTan1;Persist Security Info=False;User ID=Operaciones;Password=114057Tup;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;.
         /// </summary>
         internal static string cadenaConexion {
             get {

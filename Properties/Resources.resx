@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="cadenaConexion" xml:space="preserve">
-    <value>Data Source=DESKTOP-35TD46H\SQLEXPRESS;Initial Catalog=RcTan1;Integrated Security=True</value>
+    <value>Server=tcp:operaciones1.database.windows.net,1433;Initial Catalog=RcTan1;Persist Security Info=False;User ID=Operaciones;Password=114057Tup;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="fondo" type="System.Resources.ResXFileRef, System.Windows.Forms">
