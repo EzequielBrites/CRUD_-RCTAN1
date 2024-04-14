@@ -16,6 +16,7 @@ namespace CRUD_RCTAN1.Formularios
     public partial class Buscador : Form
     {
         Dbhelper accesoBD = new Dbhelper();
+        Personal persona = new Personal();
         public Buscador()
         {
             InitializeComponent();
@@ -28,8 +29,55 @@ namespace CRUD_RCTAN1.Formularios
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            DataTable tabla = new DataTable();
-            tabla = accesoBD.Consultar_Persona("sp_consultar_persona",int.Parse(txtBuscador.Text));
+            //FrmCargaPersonal formulario = new FrmCargaPersonal();
+            //Habilitar(true);
+            //cboGrados.Enabled = true;
+
+            //DataTable tabla = new DataTable();
+            //tabla = accesoBD.Consultar_Persona("sp_consultar_persona",int.Parse(txtBuscador.Text));
+
+            //foreach (DataRow fila in tabla.Rows)
+            //{ 
+            //    persona.Dni = Int32.Parse(fila["Dni"].ToString());
+            //    persona.Nombre = fila["Nombre"].ToString();
+            //    persona.Apellido = fila["Apellido"].ToString();
+            //    persona.FechaNacimiento = DateTime.Parse(fila["fecha_nac"].ToString());
+            //    if (Int32.Parse(fila["id_sexo"].ToString()) == 1 )
+            //    {
+            //        persona.Sexo = 1;
+            //    }
+            //    else     
+            //    {     
+            //        persona.Sexo = 2;  
+            //    }
+            //    persona.Grado = Int32.Parse(fila["id_grado"].ToString());
+            //    persona.RolAdministrativo = fila["rol_administrativo"].ToString();
+            //    persona.RolCombate = fila["rol_combate"].ToString();
+            //    persona.Seccion = Int32.Parse(fila["id_seccion"].ToString());
+            //    persona.Arma = Int32.Parse(fila["id_arma"].ToString());
+    
+            //}
+
+            //formulario.txtDni.Text = persona.Dni.ToString();
+            //formulario.txtNombre.Text = persona.Nombre.ToString();
+            //formulario.txtApellido.Text = persona.Apellido.ToString();
+            //formulario.dtpFechaNacimiento.Text = persona.FechaNacimiento.ToString("dd/MM/yyyy");
+            //if(persona.Sexo==1 ) 
+            //{ 
+            //    formulario.rbMasculino.Checked = true;
+            //}
+            //else 
+            //{ 
+            //    formulario.rbFemenino.Checked = true;
+            //}
+
+            ////formulario.cboGrados.SelectedIndex= persona.Grado;
+            //formulario.txtRolAdmin.Text = persona.RolAdministrativo;
+            //formulario.txtRolComb.Text = persona.RolCombate;
+            ////formulario.cboSecciones.SelectedIndex = persona.Seccion;
+            ////formulario.cboArmas.SelectedIndex = persona.Arma;
+
+            
             
         }
     }

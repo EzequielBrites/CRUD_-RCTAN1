@@ -20,7 +20,8 @@ namespace CRUD_RCTAN1
     {
         
         Dbhelper accesoBD = new Dbhelper();
-        
+        Personal persona = new Personal();
+
         List<Parametro> lparametros;
         public FrmCargaPersonal()
         {
@@ -39,9 +40,12 @@ namespace CRUD_RCTAN1
             CargarCombos(cboSecciones, "sp_consultar_secciones");
             CargarCombos(cboTipos, "sp_consultar_tipos_grados");
             limpiar();
+            txtDni.Enabled = true;
             Habilitar(false);
             cboGrados.Enabled = false;
             btnGuardar.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnEditar.Visible = false;
 
         }
        
@@ -165,7 +169,7 @@ namespace CRUD_RCTAN1
 
         public void Habilitar(bool x)
         {
-            txtDni.Enabled = x;
+            //txtDni.Enabled = x;
             txtNombre.Enabled = x;
             txtApellido.Enabled = x;
             dtpFechaNacimiento.Enabled = x;
@@ -182,6 +186,7 @@ namespace CRUD_RCTAN1
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            limpiar();
             Habilitar(true);
             txtDni.Focus();
             btnGuardar.Enabled = true;
@@ -189,10 +194,128 @@ namespace CRUD_RCTAN1
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            Buscador buscador = new Buscador();
-            AddOwnedForm(buscador);
-            
+            //Buscador carga = new Buscador();
+            //carga.ShowDialog();
+            if (txtDni.Text == "")
+            {
+                MessageBox.Show("Debe ingresar un DNI", "SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+                txtDni.Enabled = false;
+                btnEditar.Visible = true;
 
+                DataTable tabla = new DataTable();
+                tabla = accesoBD.Consultar_Persona("sp_consultar_persona", int.Parse(txtDni.Text));
+
+                foreach (DataRow fila in tabla.Rows)
+                {
+                    persona.Dni = Int32.Parse(fila["Dni"].ToString());
+                    persona.Nombre = fila["Nombre"].ToString();
+                    persona.Apellido = fila["Apellido"].ToString();
+                    persona.FechaNacimiento = DateTime.Parse(fila["fecha_nac"].ToString());
+                    if (Int32.Parse(fila["id_sexo"].ToString()) == 1)
+                    {
+                        persona.Sexo = 1;
+                    }
+                    else
+                    {
+                        persona.Sexo = 2;
+                    }
+                    persona.Grado = Int32.Parse(fila["id_grado"].ToString());
+                    persona.RolAdministrativo = fila["rol_administrativo"].ToString();
+                    persona.RolCombate = fila["rol_combate"].ToString();
+                    persona.Seccion = Int32.Parse(fila["id_seccion"].ToString());
+                    persona.Arma = Int32.Parse(fila["id_arma"].ToString());
+
+                }
+
+                txtDni.Text = persona.Dni.ToString();
+                txtNombre.Text = persona.Nombre.ToString();
+                txtApellido.Text = persona.Apellido.ToString();
+                dtpFechaNacimiento.Text = persona.FechaNacimiento.ToString("dd/MM/yyyy");
+                if (persona.Sexo == 1)
+                {
+                    rbMasculino.Checked = true;
+                }
+                else
+                {
+                    rbFemenino.Checked = true;
+                }
+
+                cboGrados.SelectedIndex = persona.Grado - 1;
+                txtRolAdmin.Text = persona.RolAdministrativo;
+                txtRolComb.Text = persona.RolCombate;
+                cboSecciones.SelectedIndex = persona.Seccion + 1;
+                cboArmas.SelectedIndex = persona.Arma - 1;
+
+            }
+
+        }
+
+        private void btnEditar_Click_1(object sender, EventArgs e)
+        {
+            Habilitar(true);
+            txtDni.Enabled = true;
+            btnBuscar.Enabled = false;
+            btnEliminar.Enabled = true;
+            btnGuardar.Enabled = true;
+            btnGuardar.Enabled=false;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            lparametros.Clear();
+            lparametros.Add(new Parametro("@dni", txtDni.Text));
+            if (accesoBD.actualizarBD("sp_eliminar_persona", lparametros) > 0)
+
+            {
+                MessageBox.Show("Se elimino con correctamente");
+                limpiar();
+            }
+        }
+
+        private void btnGuardarEdicion_Click(object sender, EventArgs e)
+        {
+            lparametros.Clear();
+            Personal p = new Personal();
+            p.Nombre = txtNombre.Text;
+            p.Apellido = txtApellido.Text;
+            if (rbMasculino.Checked == true)
+                p.Sexo = 1;
+            else
+                p.Sexo = 2;
+
+            p.Dni = Convert.ToInt32(txtDni.Text);
+            p.RolAdministrativo = txtRolAdmin.Text;
+            p.RolCombate = txtRolComb.Text;
+            p.Grado = cboGrados.SelectedIndex + 1;
+            p.Seccion = cboSecciones.SelectedIndex + 1;
+            p.Arma = cboArmas.SelectedIndex + 1;
+            p.FechaNacimiento = dtpFechaNacimiento.Value;
+            lparametros.Add(new Parametro("@nombre", p.Nombre));
+            lparametros.Add(new Parametro("@apellido", p.Apellido));
+            lparametros.Add(new Parametro("@fecha_nac", p.FechaNacimiento));
+            lparametros.Add(new Parametro("@sexo", p.Sexo));
+            lparametros.Add(new Parametro("@grado", p.Grado));
+            lparametros.Add(new Parametro("@seccion", p.Seccion));
+            lparametros.Add(new Parametro("@arma", p.Arma));
+            lparametros.Add(new Parametro("@rol_combate", p.RolCombate));
+            lparametros.Add(new Parametro("@rol_administrativo", p.RolAdministrativo));
+            lparametros.Add(new Parametro("@dni", p.Dni));
+
+            if (accesoBD.actualizarBD("sp_editar_persona", lparametros) > 0)
+
+            {
+                MessageBox.Show("Se modificó con éxito!");
+                limpiar();
+            }
         }
     }
 }

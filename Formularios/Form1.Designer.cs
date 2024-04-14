@@ -58,8 +58,7 @@
             this.cboGrados = new System.Windows.Forms.ComboBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.rbMasculino = new System.Windows.Forms.RadioButton();
             this.rbFemenino = new System.Windows.Forms.RadioButton();
@@ -70,6 +69,9 @@
             this.txtRolAdmin = new System.Windows.Forms.TextBox();
             this.txtRolComb = new System.Windows.Forms.TextBox();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnGuardarEdicion = new System.Windows.Forms.Button();
             this.mspCargaPersonal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -295,7 +297,7 @@
             this.cboSubUnidad.FormattingEnabled = true;
             this.cboSubUnidad.Location = new System.Drawing.Point(737, 88);
             this.cboSubUnidad.Name = "cboSubUnidad";
-            this.cboSubUnidad.Size = new System.Drawing.Size(204, 24);
+            this.cboSubUnidad.Size = new System.Drawing.Size(257, 24);
             this.cboSubUnidad.TabIndex = 14;
             // 
             // cboTipos
@@ -318,13 +320,13 @@
             this.cboGrados.FormattingEnabled = true;
             this.cboGrados.Location = new System.Drawing.Point(388, 385);
             this.cboGrados.Name = "cboGrados";
-            this.cboGrados.Size = new System.Drawing.Size(269, 24);
+            this.cboGrados.Size = new System.Drawing.Size(331, 24);
             this.cboGrados.TabIndex = 12;
             // 
             // btnGuardar
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(824, 446);
+            this.btnGuardar.Location = new System.Drawing.Point(1033, 443);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(81, 33);
             this.btnGuardar.TabIndex = 18;
@@ -335,34 +337,24 @@
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(918, 446);
+            this.btnCancelar.Location = new System.Drawing.Point(1126, 443);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(81, 33);
             this.btnCancelar.TabIndex = 19;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // btnSalir
+            // btnBuscar
             // 
-            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(1107, 446);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(81, 33);
-            this.btnSalir.TabIndex = 21;
-            this.btnSalir.Text = "Volver";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(1012, 446);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(81, 33);
-            this.btnEditar.TabIndex = 20;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(754, 443);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(81, 33);
+            this.btnBuscar.TabIndex = 20;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // rbMasculino
             // 
@@ -398,7 +390,7 @@
             this.cboSecciones.FormattingEnabled = true;
             this.cboSecciones.Location = new System.Drawing.Point(737, 270);
             this.cboSecciones.Name = "cboSecciones";
-            this.cboSecciones.Size = new System.Drawing.Size(204, 24);
+            this.cboSecciones.Size = new System.Drawing.Size(257, 24);
             this.cboSecciones.TabIndex = 16;
             // 
             // lblSeccion
@@ -421,7 +413,7 @@
             this.cboArmas.FormattingEnabled = true;
             this.cboArmas.Location = new System.Drawing.Point(737, 338);
             this.cboArmas.Name = "cboArmas";
-            this.cboArmas.Size = new System.Drawing.Size(204, 24);
+            this.cboArmas.Size = new System.Drawing.Size(257, 24);
             this.cboArmas.TabIndex = 17;
             // 
             // lblArma
@@ -457,13 +449,46 @@
             // btnNuevo
             // 
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Location = new System.Drawing.Point(919, 446);
+            this.btnNuevo.Location = new System.Drawing.Point(847, 443);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(81, 33);
             this.btnNuevo.TabIndex = 42;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(940, 443);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(81, 33);
+            this.btnEliminar.TabIndex = 43;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Location = new System.Drawing.Point(847, 443);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(81, 33);
+            this.btnEditar.TabIndex = 44;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click_1);
+            // 
+            // btnGuardarEdicion
+            // 
+            this.btnGuardarEdicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarEdicion.Location = new System.Drawing.Point(1033, 443);
+            this.btnGuardarEdicion.Name = "btnGuardarEdicion";
+            this.btnGuardarEdicion.Size = new System.Drawing.Size(81, 33);
+            this.btnGuardarEdicion.TabIndex = 45;
+            this.btnGuardarEdicion.Text = "Guardar";
+            this.btnGuardarEdicion.UseVisualStyleBackColor = true;
+            this.btnGuardarEdicion.Click += new System.EventHandler(this.btnGuardarEdicion_Click);
             // 
             // FrmCargaPersonal
             // 
@@ -472,6 +497,9 @@
             this.BackColor = System.Drawing.SystemColors.Info;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1229, 515);
+            this.Controls.Add(this.btnGuardarEdicion);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.txtRolComb);
             this.Controls.Add(this.txtRolAdmin);
@@ -481,8 +509,7 @@
             this.Controls.Add(this.lblSeccion);
             this.Controls.Add(this.rbFemenino);
             this.Controls.Add(this.rbMasculino);
-            this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.cboGrados);
@@ -534,28 +561,30 @@
         private System.Windows.Forms.Label lblSubUnidad;
         private System.Windows.Forms.Label lblGrado;
         private System.Windows.Forms.Label LblSexo;
-        private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
-        private System.Windows.Forms.ComboBox cboSubUnidad;
-        private System.Windows.Forms.ComboBox cboTipos;
-        private System.Windows.Forms.ComboBox cboGrados;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnBuscar;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ToolStripMenuItem salirAltf4ToolStripMenuItem;
-        private System.Windows.Forms.RadioButton rbMasculino;
-        private System.Windows.Forms.RadioButton rbFemenino;
-        private System.Windows.Forms.ComboBox cboSecciones;
         private System.Windows.Forms.Label lblSeccion;
-        private System.Windows.Forms.ComboBox cboArmas;
         private System.Windows.Forms.Label lblArma;
-        private System.Windows.Forms.TextBox txtRolAdmin;
-        private System.Windows.Forms.TextBox txtRolComb;
         private System.Windows.Forms.Button btnNuevo;
         public System.Windows.Forms.TextBox txtNombre;
         public System.Windows.Forms.TextBox txtApellido;
         public System.Windows.Forms.TextBox txtDni;
+        public System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
+        public System.Windows.Forms.ComboBox cboSubUnidad;
+        public System.Windows.Forms.ComboBox cboTipos;
+        public System.Windows.Forms.ComboBox cboGrados;
+        public System.Windows.Forms.RadioButton rbMasculino;
+        public System.Windows.Forms.RadioButton rbFemenino;
+        public System.Windows.Forms.ComboBox cboSecciones;
+        public System.Windows.Forms.ComboBox cboArmas;
+        public System.Windows.Forms.TextBox txtRolAdmin;
+        public System.Windows.Forms.TextBox txtRolComb;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnGuardarEdicion;
     }
 }
 
