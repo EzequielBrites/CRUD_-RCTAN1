@@ -62,7 +62,7 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.rbMasculino = new System.Windows.Forms.RadioButton();
             this.rbFemenino = new System.Windows.Forms.RadioButton();
-            this.cboSecciones = new System.Windows.Forms.ComboBox();
+            this.cboSeccion = new System.Windows.Forms.ComboBox();
             this.lblSeccion = new System.Windows.Forms.Label();
             this.cboArmas = new System.Windows.Forms.ComboBox();
             this.lblArma = new System.Windows.Forms.Label();
@@ -382,16 +382,16 @@
             this.rbFemenino.Text = "Femenino";
             this.rbFemenino.UseVisualStyleBackColor = false;
             // 
-            // cboSecciones
+            // cboSeccion
             // 
-            this.cboSecciones.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.cboSecciones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSecciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSecciones.FormattingEnabled = true;
-            this.cboSecciones.Location = new System.Drawing.Point(737, 270);
-            this.cboSecciones.Name = "cboSecciones";
-            this.cboSecciones.Size = new System.Drawing.Size(257, 24);
-            this.cboSecciones.TabIndex = 16;
+            this.cboSeccion.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cboSeccion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSeccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSeccion.FormattingEnabled = true;
+            this.cboSeccion.Location = new System.Drawing.Point(737, 270);
+            this.cboSeccion.Name = "cboSeccion";
+            this.cboSeccion.Size = new System.Drawing.Size(257, 24);
+            this.cboSeccion.TabIndex = 16;
             // 
             // lblSeccion
             // 
@@ -505,7 +505,7 @@
             this.Controls.Add(this.txtRolAdmin);
             this.Controls.Add(this.cboArmas);
             this.Controls.Add(this.lblArma);
-            this.Controls.Add(this.cboSecciones);
+            this.Controls.Add(this.cboSeccion);
             this.Controls.Add(this.lblSeccion);
             this.Controls.Add(this.rbFemenino);
             this.Controls.Add(this.rbMasculino);
@@ -578,7 +578,7 @@
         public System.Windows.Forms.ComboBox cboGrados;
         public System.Windows.Forms.RadioButton rbMasculino;
         public System.Windows.Forms.RadioButton rbFemenino;
-        public System.Windows.Forms.ComboBox cboSecciones;
+        public System.Windows.Forms.ComboBox cboSeccion;
         public System.Windows.Forms.ComboBox cboArmas;
         public System.Windows.Forms.TextBox txtRolAdmin;
         public System.Windows.Forms.TextBox txtRolComb;

@@ -37,7 +37,7 @@ namespace CRUD_RCTAN1
             
             CargarCombos(cboSubUnidad, "sp_consultar_subunidades");
             CargarCombos(cboArmas, "sp_consultar_armas");
-            CargarCombos(cboSecciones, "sp_consultar_secciones");
+            CargarCombos(cboSeccion, "sp_consultar_secciones");
             CargarCombos(cboTipos, "sp_consultar_tipos_grados");
             limpiar();
             txtDni.Enabled = true;
@@ -46,6 +46,7 @@ namespace CRUD_RCTAN1
             btnGuardar.Enabled = false;
             btnEliminar.Enabled = false;
             btnEditar.Visible = false;
+            btnGuardarEdicion.Enabled = false;
 
         }
        
@@ -66,7 +67,7 @@ namespace CRUD_RCTAN1
             txtRolComb.Text = "";
             cboSubUnidad.SelectedValue = -1;    
             cboArmas.SelectedValue = -1;
-            cboSecciones.SelectedValue = -1;
+            cboSeccion.SelectedValue = -1;
             cboTipos.SelectedValue= -1; 
 
         }
@@ -122,6 +123,65 @@ namespace CRUD_RCTAN1
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (txtDni.Text == "")
+            {
+                MessageBox.Show("Debe ingresar un DNI", "SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (txtNombre.Text == "")
+            {
+                MessageBox.Show("Debe ingresar un NOMBRE", "SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (txtApellido.Text == "")
+            {
+                MessageBox.Show("Debe ingresar un APELLIDO", "SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            
+            if (dtpFechaNacimiento.Value == DateTime.Today)
+            {
+                MessageBox.Show("Debe ingresar una fecha de nacimiento correcta", "SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (rbFemenino.Checked == false && rbMasculino.Checked == false)
+            {
+                MessageBox.Show("Debe seleccionar un Sexo", "SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (cboGrados.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un Grado", "SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (txtRolAdmin.Text == "")
+            {
+                MessageBox.Show("Debe ingresar un Rol Administrativo", "SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (txtRolComb.Text == "")
+            {
+                MessageBox.Show("Debe ingresar un Rol de Combate", "SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (cboSeccion.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar una Sección", "SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (cboArmas.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un Arma", "SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             lparametros.Clear();
             Personal p = new Personal();
             p.Nombre = txtNombre.Text;
@@ -132,26 +192,17 @@ namespace CRUD_RCTAN1
                 p.Sexo = 2;
             
             p.Dni = Convert.ToInt32(txtDni.Text);
-            
             p.RolAdministrativo = txtRolAdmin.Text;
-            p.RolCombate = txtRolComb.Text;
-            
+            p.RolCombate = txtRolComb.Text; 
             p.Grado = cboGrados.SelectedIndex+1;
-            p.Seccion= cboSecciones.SelectedIndex + 1;
+            p.Seccion= cboSeccion.SelectedIndex;
             p.Arma= cboArmas.SelectedIndex + 1;
-            
-            p.FechaNacimiento = dtpFechaNacimiento.Value;
-
-            
+            p.FechaNacimiento = dtpFechaNacimiento.Value; 
             lparametros.Add(new Parametro("@nombre", p.Nombre));
-            lparametros.Add(new Parametro("@apellido", p.Apellido));
-            
-            
+            lparametros.Add(new Parametro("@apellido", p.Apellido));  
             lparametros.Add(new Parametro("@fecha_nacimiento", p.FechaNacimiento));
             lparametros.Add(new Parametro("@sexo", p.Sexo));
-            
             lparametros.Add(new Parametro("@grado", p.Grado));
-            
             lparametros.Add(new Parametro("@seccion", p.Seccion));
             lparametros.Add(new Parametro("@arma", p.Arma));
             lparametros.Add(new Parametro("@rolCombate", p.RolCombate));
@@ -163,6 +214,13 @@ namespace CRUD_RCTAN1
             {
                 MessageBox.Show("Se registro con exito!");
                 limpiar();
+                txtDni.Enabled = true;
+                Habilitar(false);
+                cboGrados.Enabled = false;
+                btnGuardar.Enabled = false;
+                btnEliminar.Enabled = false;
+                btnEditar.Visible = false;
+                btnGuardarEdicion.Enabled = false;
             }
 
         }
@@ -179,23 +237,27 @@ namespace CRUD_RCTAN1
             cboSubUnidad.Enabled = x;
             txtRolAdmin.Enabled = x;
             txtRolComb.Enabled = x;
-            cboSecciones.Enabled = x;
+            cboSeccion.Enabled = x;
             cboArmas.Enabled = x;
 
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            limpiar();
+            //limpiar();
             Habilitar(true);
             txtDni.Focus();
             btnGuardar.Enabled = true;
+            btnNuevo.Visible = false;
+            btnEliminar.Visible = false;
+            btnBuscar.Visible = false;
+            btnGuardarEdicion.Visible = false;
+            
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            //Buscador carga = new Buscador();
-            //carga.ShowDialog();
+            
             if (txtDni.Text == "")
             {
                 MessageBox.Show("Debe ingresar un DNI", "SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -203,6 +265,8 @@ namespace CRUD_RCTAN1
             }
             else
             {
+                btnBuscar.Visible = false;
+                
                 txtDni.Enabled = false;
                 btnEditar.Visible = true;
 
@@ -247,7 +311,7 @@ namespace CRUD_RCTAN1
                 cboGrados.SelectedIndex = persona.Grado - 1;
                 txtRolAdmin.Text = persona.RolAdministrativo;
                 txtRolComb.Text = persona.RolCombate;
-                cboSecciones.SelectedIndex = persona.Seccion + 1;
+                cboSeccion.SelectedIndex = persona.Seccion + 1;
                 cboArmas.SelectedIndex = persona.Arma - 1;
 
             }
@@ -261,6 +325,7 @@ namespace CRUD_RCTAN1
             btnBuscar.Enabled = false;
             btnEliminar.Enabled = true;
             btnGuardar.Enabled = true;
+            btnGuardarEdicion.Enabled = true;
             btnGuardar.Enabled=false;
         }
 
@@ -271,14 +336,18 @@ namespace CRUD_RCTAN1
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("¿Seguro desea eliminarlo?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question
+                , MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+              
             lparametros.Clear();
-            lparametros.Add(new Parametro("@dni", txtDni.Text));
+            lparametros.Add(new Parametro("@dni", Int32.Parse(txtDni.Text)));
             if (accesoBD.actualizarBD("sp_eliminar_persona", lparametros) > 0)
 
             {
-                MessageBox.Show("Se elimino con correctamente");
+                MessageBox.Show("Se elimino correctamente");
                 limpiar();
             }
+            
         }
 
         private void btnGuardarEdicion_Click(object sender, EventArgs e)
@@ -296,11 +365,12 @@ namespace CRUD_RCTAN1
             p.RolAdministrativo = txtRolAdmin.Text;
             p.RolCombate = txtRolComb.Text;
             p.Grado = cboGrados.SelectedIndex + 1;
-            p.Seccion = cboSecciones.SelectedIndex + 1;
+            p.Seccion = cboSeccion.SelectedIndex -1 ;
             p.Arma = cboArmas.SelectedIndex + 1;
             p.FechaNacimiento = dtpFechaNacimiento.Value;
-            lparametros.Add(new Parametro("@nombre", p.Nombre));
-            lparametros.Add(new Parametro("@apellido", p.Apellido));
+            lparametros.Add(new Parametro("@Dni", p.Dni));
+            lparametros.Add(new Parametro("@Nombre", p.Nombre));
+            lparametros.Add(new Parametro("@Apellido", p.Apellido));
             lparametros.Add(new Parametro("@fecha_nac", p.FechaNacimiento));
             lparametros.Add(new Parametro("@sexo", p.Sexo));
             lparametros.Add(new Parametro("@grado", p.Grado));
@@ -308,13 +378,22 @@ namespace CRUD_RCTAN1
             lparametros.Add(new Parametro("@arma", p.Arma));
             lparametros.Add(new Parametro("@rol_combate", p.RolCombate));
             lparametros.Add(new Parametro("@rol_administrativo", p.RolAdministrativo));
-            lparametros.Add(new Parametro("@dni", p.Dni));
+            
 
             if (accesoBD.actualizarBD("sp_editar_persona", lparametros) > 0)
 
             {
                 MessageBox.Show("Se modificó con éxito!");
                 limpiar();
+                txtDni.Enabled = true;
+                Habilitar(false);
+                cboGrados.Enabled = false;
+                btnGuardar.Enabled = false;
+                btnEliminar.Enabled = false;
+                btnEditar.Visible = false;
+                btnBuscar.Visible = true;
+                btnBuscar.Enabled = true;
+                btnGuardarEdicion.Enabled = false;
             }
         }
     }
