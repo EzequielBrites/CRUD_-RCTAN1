@@ -119,12 +119,14 @@ namespace CRUD_RCTAN1.Datos
             int filasAfectadas = 0;
             conexion.Open();
             comando.CommandText = sp;
+            
             foreach (Parametro p in lparametros)
             {
                 comando.Parameters.AddWithValue(p.pNombre, p.pValor);
             }
             filasAfectadas = comando.ExecuteNonQuery();
             conexion.Close();
+            lparametros.Clear();
             return filasAfectadas;
         }
 

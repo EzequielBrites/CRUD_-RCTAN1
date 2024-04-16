@@ -215,12 +215,14 @@ namespace CRUD_RCTAN1
                 MessageBox.Show("Se registro con exito!");
                 limpiar();
                 txtDni.Enabled = true;
+                txtDni.Enabled = true;
                 Habilitar(false);
                 cboGrados.Enabled = false;
                 btnGuardar.Enabled = false;
                 btnEliminar.Enabled = false;
                 btnEditar.Visible = false;
                 btnGuardarEdicion.Enabled = false;
+                lparametros.Clear();
             }
 
         }
@@ -311,7 +313,7 @@ namespace CRUD_RCTAN1
                 cboGrados.SelectedIndex = persona.Grado - 1;
                 txtRolAdmin.Text = persona.RolAdministrativo;
                 txtRolComb.Text = persona.RolCombate;
-                cboSeccion.SelectedIndex = persona.Seccion + 1;
+                cboSeccion.SelectedIndex = persona.Seccion;
                 cboArmas.SelectedIndex = persona.Arma - 1;
 
             }
@@ -346,6 +348,14 @@ namespace CRUD_RCTAN1
             {
                 MessageBox.Show("Se elimino correctamente");
                 limpiar();
+                txtDni.Enabled = true;
+                Habilitar(false);
+                cboGrados.Enabled = false;
+                btnGuardar.Enabled = false;
+                btnEliminar.Enabled = false;
+                btnEditar.Visible = false;
+                btnGuardarEdicion.Enabled = false;
+                lparametros.Clear();
             }
             
         }
@@ -394,6 +404,7 @@ namespace CRUD_RCTAN1
                 btnBuscar.Visible = true;
                 btnBuscar.Enabled = true;
                 btnGuardarEdicion.Enabled = false;
+                lparametros.Clear();
             }
         }
     }
