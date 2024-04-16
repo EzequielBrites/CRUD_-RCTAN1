@@ -193,9 +193,23 @@ namespace CRUD_RCTAN1
             
             p.Dni = Convert.ToInt32(txtDni.Text);
             p.RolAdministrativo = txtRolAdmin.Text;
-            p.RolCombate = txtRolComb.Text; 
-            p.Grado = cboGrados.SelectedIndex+1;
-            p.Seccion= cboSeccion.SelectedIndex;
+            p.RolCombate = txtRolComb.Text;
+            if (cboTipos.SelectedIndex == 0 )
+            {
+                p.Grado = cboGrados.SelectedIndex + 1;
+            }
+            if (cboTipos.SelectedIndex == 1)
+            {
+                
+                p.Grado = cboGrados.SelectedIndex + 4;
+            }
+            if (cboTipos.SelectedIndex == 2)
+            {
+                
+                p.Grado = cboGrados.SelectedIndex + 9;
+            }
+            //p.Grado = cboGrados.SelectedIndex+1;
+            p.Seccion= cboSeccion.SelectedIndex+1;
             p.Arma= cboArmas.SelectedIndex + 1;
             p.FechaNacimiento = dtpFechaNacimiento.Value; 
             lparametros.Add(new Parametro("@nombre", p.Nombre));
@@ -215,13 +229,17 @@ namespace CRUD_RCTAN1
                 MessageBox.Show("Se registro con exito!");
                 limpiar();
                 txtDni.Enabled = true;
-                txtDni.Enabled = true;
                 Habilitar(false);
                 cboGrados.Enabled = false;
-                btnGuardar.Enabled = false;
+                
                 btnEliminar.Enabled = false;
-                btnEditar.Visible = false;
-                btnGuardarEdicion.Enabled = false;
+                btnEditar.Visible = true;
+                txtDni.Focus();
+                btnGuardar.Visible = true;
+                btnNuevo.Visible = true;
+                btnEliminar.Visible = false;
+                btnBuscar.Visible = true;
+                btnGuardarEdicion.Visible = false;
                 lparametros.Clear();
             }
 
@@ -310,11 +328,27 @@ namespace CRUD_RCTAN1
                     rbFemenino.Checked = true;
                 }
 
-                cboGrados.SelectedIndex = persona.Grado - 1;
+                if (persona.Grado >= 1 && persona.Grado <= 3)
+                {
+                    cboTipos.SelectedIndex = 0;
+                    cboGrados.SelectedIndex = persona.Grado-1;
+                }
+                if (persona.Grado >= 4 && persona.Grado <= 10)
+                {
+                    cboTipos.SelectedIndex = 1;
+                    cboGrados.SelectedIndex = persona.Grado-1 ;
+                }
+                if (persona.Grado >= 11 && persona.Grado <= 16)
+                {
+                    cboTipos.SelectedIndex = 2;
+                    cboGrados.SelectedIndex = persona.Grado-1;
+                }
+
                 txtRolAdmin.Text = persona.RolAdministrativo;
                 txtRolComb.Text = persona.RolCombate;
-                cboSeccion.SelectedIndex = persona.Seccion;
+                cboSeccion.SelectedIndex = persona.Seccion-1;
                 cboArmas.SelectedIndex = persona.Arma - 1;
+                cboGrados.Enabled = false;
 
             }
 
@@ -338,7 +372,7 @@ namespace CRUD_RCTAN1
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Seguro desea eliminarlo?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question
+            if (MessageBox.Show("¿Seguro desea eliminar?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question
                 , MessageBoxDefaultButton.Button2) == DialogResult.Yes)
               
             lparametros.Clear();
@@ -355,6 +389,8 @@ namespace CRUD_RCTAN1
                 btnEliminar.Enabled = false;
                 btnEditar.Visible = false;
                 btnGuardarEdicion.Enabled = false;
+                btnBuscar.Visible = true;
+                btnBuscar.Enabled = true;
                 lparametros.Clear();
             }
             
@@ -374,9 +410,9 @@ namespace CRUD_RCTAN1
             p.Dni = Convert.ToInt32(txtDni.Text);
             p.RolAdministrativo = txtRolAdmin.Text;
             p.RolCombate = txtRolComb.Text;
-            p.Grado = cboGrados.SelectedIndex + 1;
-            p.Seccion = cboSeccion.SelectedIndex -1 ;
-            p.Arma = cboArmas.SelectedIndex + 1;
+            p.Grado = cboGrados.SelectedIndex+1 ;
+            p.Seccion = cboSeccion.SelectedIndex+1 ;
+            p.Arma = cboArmas.SelectedIndex+1 ;
             p.FechaNacimiento = dtpFechaNacimiento.Value;
             lparametros.Add(new Parametro("@Dni", p.Dni));
             lparametros.Add(new Parametro("@Nombre", p.Nombre));
