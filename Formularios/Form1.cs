@@ -181,6 +181,11 @@ namespace CRUD_RCTAN1
                 MessageBox.Show("Debe seleccionar un Arma", "SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            if (cboSubUnidad.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar una SubUnidad", "SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
             lparametros.Clear();
             Personal p = new Personal();
@@ -203,14 +208,15 @@ namespace CRUD_RCTAN1
                 
                 p.Grado = cboGrados.SelectedIndex + 4;
             }
-            if (cboTipos.SelectedIndex == 2)
+            if (cboTipos.SelectedIndex == 3)
             {
                 
-                p.Grado = cboGrados.SelectedIndex + 9;
+                p.Grado = cboGrados.SelectedIndex + 11;
             }
             //p.Grado = cboGrados.SelectedIndex+1;
             p.Seccion= cboSeccion.SelectedIndex+1;
             p.Arma= cboArmas.SelectedIndex + 1;
+            p.SubUnidad=cboSubUnidad.SelectedIndex + 1;
             p.FechaNacimiento = dtpFechaNacimiento.Value; 
             lparametros.Add(new Parametro("@nombre", p.Nombre));
             lparametros.Add(new Parametro("@apellido", p.Apellido));  
@@ -219,6 +225,7 @@ namespace CRUD_RCTAN1
             lparametros.Add(new Parametro("@grado", p.Grado));
             lparametros.Add(new Parametro("@seccion", p.Seccion));
             lparametros.Add(new Parametro("@arma", p.Arma));
+            lparametros.Add(new Parametro("@subunidad", p.SubUnidad));
             lparametros.Add(new Parametro("@rolCombate", p.RolCombate));
             lparametros.Add(new Parametro("@rolAdministrativo", p.RolAdministrativo));
             lparametros.Add(new Parametro("@dni", p.Dni));
@@ -231,15 +238,17 @@ namespace CRUD_RCTAN1
                 txtDni.Enabled = true;
                 Habilitar(false);
                 cboGrados.Enabled = false;
-                
-                btnEliminar.Enabled = false;
-                btnEditar.Visible = true;
+                //btnEditar.Visible = false;
                 txtDni.Focus();
                 btnGuardar.Visible = true;
+                btnGuardar.Enabled = false;
                 btnNuevo.Visible = true;
-                btnEliminar.Visible = false;
+                btnEliminar.Visible = true;
+                btnEliminar.Enabled = false;
                 btnBuscar.Visible = true;
                 btnGuardarEdicion.Visible = false;
+
+
                 lparametros.Clear();
             }
 
@@ -312,6 +321,7 @@ namespace CRUD_RCTAN1
                     persona.RolCombate = fila["rol_combate"].ToString();
                     persona.Seccion = Int32.Parse(fila["id_seccion"].ToString());
                     persona.Arma = Int32.Parse(fila["id_arma"].ToString());
+                    persona.SubUnidad = Int32.Parse(fila["id_subunidad"].ToString());
 
                 }
 
@@ -331,23 +341,24 @@ namespace CRUD_RCTAN1
                 if (persona.Grado >= 1 && persona.Grado <= 3)
                 {
                     cboTipos.SelectedIndex = 0;
-                    cboGrados.SelectedIndex = persona.Grado-1;
+                    cboGrados.SelectedIndex = persona.Grado - 1;
                 }
                 if (persona.Grado >= 4 && persona.Grado <= 10)
                 {
                     cboTipos.SelectedIndex = 1;
-                    cboGrados.SelectedIndex = persona.Grado-1 ;
+                    cboGrados.SelectedIndex = persona.Grado - 4;
                 }
                 if (persona.Grado >= 11 && persona.Grado <= 16)
                 {
                     cboTipos.SelectedIndex = 2;
-                    cboGrados.SelectedIndex = persona.Grado-1;
+                    cboGrados.SelectedIndex = persona.Grado - 11;
                 }
 
                 txtRolAdmin.Text = persona.RolAdministrativo;
                 txtRolComb.Text = persona.RolCombate;
                 cboSeccion.SelectedIndex = persona.Seccion-1;
                 cboArmas.SelectedIndex = persona.Arma - 1;
+                cboSubUnidad.SelectedIndex= persona.SubUnidad-1;
                 cboGrados.Enabled = false;
 
             }
@@ -410,9 +421,24 @@ namespace CRUD_RCTAN1
             p.Dni = Convert.ToInt32(txtDni.Text);
             p.RolAdministrativo = txtRolAdmin.Text;
             p.RolCombate = txtRolComb.Text;
-            p.Grado = cboGrados.SelectedIndex+1 ;
+            //p.Grado = cboGrados.SelectedIndex+1 ;
+            if (cboTipos.SelectedIndex == 0)
+            {
+                p.Grado = cboGrados.SelectedIndex + 1;
+            }
+            if (cboTipos.SelectedIndex == 1)
+            {
+
+                p.Grado = cboGrados.SelectedIndex + 4;
+            }
+            if (cboTipos.SelectedIndex == 2)
+            {
+
+                p.Grado = cboGrados.SelectedIndex + 11;
+            }
             p.Seccion = cboSeccion.SelectedIndex+1 ;
             p.Arma = cboArmas.SelectedIndex+1 ;
+            p.SubUnidad = cboSubUnidad.SelectedIndex+1 ;
             p.FechaNacimiento = dtpFechaNacimiento.Value;
             lparametros.Add(new Parametro("@Dni", p.Dni));
             lparametros.Add(new Parametro("@Nombre", p.Nombre));
@@ -422,6 +448,7 @@ namespace CRUD_RCTAN1
             lparametros.Add(new Parametro("@grado", p.Grado));
             lparametros.Add(new Parametro("@seccion", p.Seccion));
             lparametros.Add(new Parametro("@arma", p.Arma));
+            lparametros.Add(new Parametro("@id_subunidad", p.SubUnidad));
             lparametros.Add(new Parametro("@rol_combate", p.RolCombate));
             lparametros.Add(new Parametro("@rol_administrativo", p.RolAdministrativo));
             
@@ -440,7 +467,7 @@ namespace CRUD_RCTAN1
                 btnBuscar.Visible = true;
                 btnBuscar.Enabled = true;
                 btnGuardarEdicion.Enabled = false;
-                lparametros.Clear();
+                
             }
         }
     }

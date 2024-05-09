@@ -110,6 +110,7 @@ namespace CRUD_RCTAN1.Datos
             finally
             {
                 conexion.Close();
+                comando.Parameters.Clear();
             }
 
             return -1;
@@ -125,8 +126,9 @@ namespace CRUD_RCTAN1.Datos
                 comando.Parameters.AddWithValue(p.pNombre, p.pValor);
             }
             filasAfectadas = comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
             conexion.Close();
-            lparametros.Clear();
+            
             return filasAfectadas;
         }
 
@@ -153,6 +155,7 @@ namespace CRUD_RCTAN1.Datos
             finally
             {
                 conexion.Close();
+                comando.Parameters.Clear();
             }
             return tabla;
         }

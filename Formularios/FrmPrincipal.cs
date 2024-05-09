@@ -50,7 +50,7 @@ namespace CRUD_RCTAN1.Formularios
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-
+            cboConsultas.Visible = false;
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
@@ -72,6 +72,19 @@ namespace CRUD_RCTAN1.Formularios
             btnCursillos.Visible = true;
             btnExamenes.Visible = true;
             btnAtras.Visible = true;
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            cboConsultas.Visible = true ;
+        }
+
+        private void cboConsultas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboConsultas.SelectedIndex==0) 
+            {
+            
+            }
         }
     }
 }

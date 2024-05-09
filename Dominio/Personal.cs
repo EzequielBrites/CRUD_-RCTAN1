@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,8 +9,9 @@ namespace CRUD_RCTAN1.Dominio
 {
     internal class Personal
     {
-        private int dni, sexo, grado, seccion, arma;
-        
+        private int sexo, grado, seccion, arma,subunidad;
+        private int dni;
+
         private string nombre, apellido, rolCombate, rolAdministrativo;
         private DateTime fechaNacimiento;
 
@@ -20,6 +22,7 @@ namespace CRUD_RCTAN1.Dominio
             grado = 0;
             seccion = 0;
             arma = 0;
+            subunidad = 0;
             nombre = string.Empty;
             apellido = string.Empty;
             rolCombate = string.Empty;
@@ -28,13 +31,14 @@ namespace CRUD_RCTAN1.Dominio
         
         
         }   
-        public Personal(int dni,int sexo, int grado, int seccion, int arma, string nombre, string apellido, string rolCombate, string rolAdministrativo, DateTime fechaNacimiento)
+        public Personal(int dni,int sexo, int grado, int seccion, int arma,int subunidad, string nombre, string apellido, string rolCombate, string rolAdministrativo, DateTime fechaNacimiento)
         {
             this.dni = dni;
             this.sexo = sexo;
             this.grado = grado;
             this.seccion = seccion;
             this.arma = arma;
+            this.subunidad = subunidad;
             this.nombre = nombre;
             this.apellido = apellido;
             this.rolCombate = rolCombate;
@@ -47,7 +51,9 @@ namespace CRUD_RCTAN1.Dominio
         public int Grado { get => grado; set => grado = value; }
         public int Seccion { get => seccion; set => seccion = value; }
         public int Arma { get => arma; set => arma = value; }
-        
+
+        public int SubUnidad { get => subunidad ; set => subunidad = value; }
+
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellido { get => apellido; set => apellido = value; }
         

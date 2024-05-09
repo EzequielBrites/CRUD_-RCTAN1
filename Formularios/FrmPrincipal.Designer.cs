@@ -41,6 +41,7 @@
             this.btnConsultar = new System.Windows.Forms.Button();
             this.btnCursillos = new System.Windows.Forms.Button();
             this.btnExamenes = new System.Windows.Forms.Button();
+            this.cboConsultas = new System.Windows.Forms.ComboBox();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -135,6 +136,7 @@
             this.btnConsultar.TabIndex = 7;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // btnCursillos
             // 
@@ -158,6 +160,18 @@
             this.btnExamenes.Text = "Exámenes";
             this.btnExamenes.UseVisualStyleBackColor = true;
             // 
+            // cboConsultas
+            // 
+            this.cboConsultas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboConsultas.FormattingEnabled = true;
+            this.cboConsultas.Items.AddRange(new object[] {
+            "Listado de personal"});
+            this.cboConsultas.Location = new System.Drawing.Point(223, 221);
+            this.cboConsultas.Name = "cboConsultas";
+            this.cboConsultas.Size = new System.Drawing.Size(261, 28);
+            this.cboConsultas.TabIndex = 10;
+            this.cboConsultas.SelectedIndexChanged += new System.EventHandler(this.cboConsultas_SelectedIndexChanged);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -165,6 +179,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BackgroundImage = global::CRUD_RCTAN1.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(697, 562);
+            this.Controls.Add(this.cboConsultas);
             this.Controls.Add(this.btnExamenes);
             this.Controls.Add(this.btnCursillos);
             this.Controls.Add(this.btnConsultar);
@@ -199,5 +214,6 @@
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.Button btnCursillos;
         private System.Windows.Forms.Button btnExamenes;
+        private System.Windows.Forms.ComboBox cboConsultas;
     }
 }
