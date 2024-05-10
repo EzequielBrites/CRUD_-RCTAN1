@@ -20,9 +20,9 @@ namespace CRUD_RCTAN1 {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("RcTan1DataSet1")]
+    [global::System.Xml.Serialization.XmlRootAttribute("RcTan1DataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class RcTan1DataSet1 : global::System.Data.DataSet {
+    public partial class RcTan1DataSet : global::System.Data.DataSet {
         
         private AdministradoresDataTable tableAdministradores;
         
@@ -72,8 +72,6 @@ namespace CRUD_RCTAN1 {
         
         private sp_listar_personal_datosDataTable tablesp_listar_personal_datos;
         
-        private sp_listar_todo_personalDataTable tablesp_listar_todo_personal;
-        
         private sp_verificar_usuarioDataTable tablesp_verificar_usuario;
         
         private global::System.Data.DataRelation relationfk_tipos_grados;
@@ -98,7 +96,7 @@ namespace CRUD_RCTAN1 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public RcTan1DataSet1() {
+        public RcTan1DataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -109,7 +107,7 @@ namespace CRUD_RCTAN1 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected RcTan1DataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected RcTan1DataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -193,9 +191,6 @@ namespace CRUD_RCTAN1 {
                 }
                 if ((ds.Tables["sp_listar_personal_datos"] != null)) {
                     base.Tables.Add(new sp_listar_personal_datosDataTable(ds.Tables["sp_listar_personal_datos"]));
-                }
-                if ((ds.Tables["sp_listar_todo_personal"] != null)) {
-                    base.Tables.Add(new sp_listar_todo_personalDataTable(ds.Tables["sp_listar_todo_personal"]));
                 }
                 if ((ds.Tables["sp_verificar_usuario"] != null)) {
                     base.Tables.Add(new sp_verificar_usuarioDataTable(ds.Tables["sp_verificar_usuario"]));
@@ -462,16 +457,6 @@ namespace CRUD_RCTAN1 {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public sp_listar_todo_personalDataTable sp_listar_todo_personal {
-            get {
-                return this.tablesp_listar_todo_personal;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public sp_verificar_usuarioDataTable sp_verificar_usuario {
             get {
                 return this.tablesp_verificar_usuario;
@@ -520,7 +505,7 @@ namespace CRUD_RCTAN1 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            RcTan1DataSet1 cln = ((RcTan1DataSet1)(base.Clone()));
+            RcTan1DataSet cln = ((RcTan1DataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -616,9 +601,6 @@ namespace CRUD_RCTAN1 {
                 }
                 if ((ds.Tables["sp_listar_personal_datos"] != null)) {
                     base.Tables.Add(new sp_listar_personal_datosDataTable(ds.Tables["sp_listar_personal_datos"]));
-                }
-                if ((ds.Tables["sp_listar_todo_personal"] != null)) {
-                    base.Tables.Add(new sp_listar_todo_personalDataTable(ds.Tables["sp_listar_todo_personal"]));
                 }
                 if ((ds.Tables["sp_verificar_usuario"] != null)) {
                     base.Tables.Add(new sp_verificar_usuarioDataTable(ds.Tables["sp_verificar_usuario"]));
@@ -800,12 +782,6 @@ namespace CRUD_RCTAN1 {
                     this.tablesp_listar_personal_datos.InitVars();
                 }
             }
-            this.tablesp_listar_todo_personal = ((sp_listar_todo_personalDataTable)(base.Tables["sp_listar_todo_personal"]));
-            if ((initTable == true)) {
-                if ((this.tablesp_listar_todo_personal != null)) {
-                    this.tablesp_listar_todo_personal.InitVars();
-                }
-            }
             this.tablesp_verificar_usuario = ((sp_verificar_usuarioDataTable)(base.Tables["sp_verificar_usuario"]));
             if ((initTable == true)) {
                 if ((this.tablesp_verificar_usuario != null)) {
@@ -826,9 +802,9 @@ namespace CRUD_RCTAN1 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "RcTan1DataSet1";
+            this.DataSetName = "RcTan1DataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/RcTan1DataSet1.xsd";
+            this.Namespace = "http://tempuri.org/RcTan1DataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableAdministradores = new AdministradoresDataTable();
@@ -879,8 +855,6 @@ namespace CRUD_RCTAN1 {
             base.Tables.Add(this.tablesp_listar_personal);
             this.tablesp_listar_personal_datos = new sp_listar_personal_datosDataTable();
             base.Tables.Add(this.tablesp_listar_personal_datos);
-            this.tablesp_listar_todo_personal = new sp_listar_todo_personalDataTable();
-            base.Tables.Add(this.tablesp_listar_todo_personal);
             this.tablesp_verificar_usuario = new sp_verificar_usuarioDataTable();
             base.Tables.Add(this.tablesp_verificar_usuario);
             this.relationfk_tipos_grados = new global::System.Data.DataRelation("fk_tipos_grados", new global::System.Data.DataColumn[] {
@@ -1067,12 +1041,6 @@ namespace CRUD_RCTAN1 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializesp_listar_todo_personal() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private bool ShouldSerializesp_verificar_usuario() {
             return false;
         }
@@ -1088,7 +1056,7 @@ namespace CRUD_RCTAN1 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            RcTan1DataSet1 ds = new RcTan1DataSet1();
+            RcTan1DataSet ds = new RcTan1DataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -1203,9 +1171,6 @@ namespace CRUD_RCTAN1 {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void sp_listar_personal_datosRowChangeEventHandler(object sender, sp_listar_personal_datosRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void sp_listar_todo_personalRowChangeEventHandler(object sender, sp_listar_todo_personalRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void sp_verificar_usuarioRowChangeEventHandler(object sender, sp_verificar_usuarioRowChangeEvent e);
@@ -1443,7 +1408,7 @@ namespace CRUD_RCTAN1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RcTan1DataSet1 ds = new RcTan1DataSet1();
+                RcTan1DataSet ds = new RcTan1DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1720,7 +1685,7 @@ namespace CRUD_RCTAN1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RcTan1DataSet1 ds = new RcTan1DataSet1();
+                RcTan1DataSet ds = new RcTan1DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2012,7 +1977,7 @@ namespace CRUD_RCTAN1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RcTan1DataSet1 ds = new RcTan1DataSet1();
+                RcTan1DataSet ds = new RcTan1DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2289,7 +2254,7 @@ namespace CRUD_RCTAN1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RcTan1DataSet1 ds = new RcTan1DataSet1();
+                RcTan1DataSet ds = new RcTan1DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2598,7 +2563,7 @@ namespace CRUD_RCTAN1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RcTan1DataSet1 ds = new RcTan1DataSet1();
+                RcTan1DataSet ds = new RcTan1DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3015,7 +2980,7 @@ namespace CRUD_RCTAN1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RcTan1DataSet1 ds = new RcTan1DataSet1();
+                RcTan1DataSet ds = new RcTan1DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3351,7 +3316,7 @@ namespace CRUD_RCTAN1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RcTan1DataSet1 ds = new RcTan1DataSet1();
+                RcTan1DataSet ds = new RcTan1DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3645,7 +3610,7 @@ namespace CRUD_RCTAN1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RcTan1DataSet1 ds = new RcTan1DataSet1();
+                RcTan1DataSet ds = new RcTan1DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3939,7 +3904,7 @@ namespace CRUD_RCTAN1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RcTan1DataSet1 ds = new RcTan1DataSet1();
+                RcTan1DataSet ds = new RcTan1DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4243,7 +4208,7 @@ namespace CRUD_RCTAN1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RcTan1DataSet1 ds = new RcTan1DataSet1();
+                RcTan1DataSet ds = new RcTan1DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4520,7 +4485,7 @@ namespace CRUD_RCTAN1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RcTan1DataSet1 ds = new RcTan1DataSet1();
+                RcTan1DataSet ds = new RcTan1DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4797,7 +4762,7 @@ namespace CRUD_RCTAN1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RcTan1DataSet1 ds = new RcTan1DataSet1();
+                RcTan1DataSet ds = new RcTan1DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -5074,7 +5039,7 @@ namespace CRUD_RCTAN1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RcTan1DataSet1 ds = new RcTan1DataSet1();
+                RcTan1DataSet ds = new RcTan1DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -5351,7 +5316,7 @@ namespace CRUD_RCTAN1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RcTan1DataSet1 ds = new RcTan1DataSet1();
+                RcTan1DataSet ds = new RcTan1DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -5628,7 +5593,7 @@ namespace CRUD_RCTAN1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RcTan1DataSet1 ds = new RcTan1DataSet1();
+                RcTan1DataSet ds = new RcTan1DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -5903,7 +5868,7 @@ namespace CRUD_RCTAN1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RcTan1DataSet1 ds = new RcTan1DataSet1();
+                RcTan1DataSet ds = new RcTan1DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -6178,7 +6143,7 @@ namespace CRUD_RCTAN1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RcTan1DataSet1 ds = new RcTan1DataSet1();
+                RcTan1DataSet ds = new RcTan1DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -6594,7 +6559,7 @@ namespace CRUD_RCTAN1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RcTan1DataSet1 ds = new RcTan1DataSet1();
+                RcTan1DataSet ds = new RcTan1DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -6869,7 +6834,7 @@ namespace CRUD_RCTAN1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RcTan1DataSet1 ds = new RcTan1DataSet1();
+                RcTan1DataSet ds = new RcTan1DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -7144,7 +7109,7 @@ namespace CRUD_RCTAN1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RcTan1DataSet1 ds = new RcTan1DataSet1();
+                RcTan1DataSet ds = new RcTan1DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -7419,7 +7384,7 @@ namespace CRUD_RCTAN1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RcTan1DataSet1 ds = new RcTan1DataSet1();
+                RcTan1DataSet ds = new RcTan1DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -7694,7 +7659,7 @@ namespace CRUD_RCTAN1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RcTan1DataSet1 ds = new RcTan1DataSet1();
+                RcTan1DataSet ds = new RcTan1DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -8012,7 +7977,7 @@ namespace CRUD_RCTAN1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RcTan1DataSet1 ds = new RcTan1DataSet1();
+                RcTan1DataSet ds = new RcTan1DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -8078,6 +8043,8 @@ namespace CRUD_RCTAN1 {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class sp_listar_personal_datosDataTable : global::System.Data.TypedTableBase<sp_listar_personal_datosRow> {
             
+            private global::System.Data.DataColumn columndni;
+            
             private global::System.Data.DataColumn columnnombre;
             
             private global::System.Data.DataColumn columnapellido;
@@ -8123,6 +8090,14 @@ namespace CRUD_RCTAN1 {
             protected sp_listar_personal_datosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn dniColumn {
+                get {
+                    return this.columndni;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8218,9 +8193,10 @@ namespace CRUD_RCTAN1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public sp_listar_personal_datosRow Addsp_listar_personal_datosRow(string nombre, string apellido, string grado, string rol_combate, string rol_administrativo, string arma, string seccion) {
+            public sp_listar_personal_datosRow Addsp_listar_personal_datosRow(long dni, string nombre, string apellido, string grado, string rol_combate, string rol_administrativo, string arma, string seccion) {
                 sp_listar_personal_datosRow rowsp_listar_personal_datosRow = ((sp_listar_personal_datosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        dni,
                         nombre,
                         apellido,
                         grado,
@@ -8231,6 +8207,13 @@ namespace CRUD_RCTAN1 {
                 rowsp_listar_personal_datosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowsp_listar_personal_datosRow);
                 return rowsp_listar_personal_datosRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public sp_listar_personal_datosRow FindBydni(long dni) {
+                return ((sp_listar_personal_datosRow)(this.Rows.Find(new object[] {
+                            dni})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8250,6 +8233,7 @@ namespace CRUD_RCTAN1 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
+                this.columndni = base.Columns["dni"];
                 this.columnnombre = base.Columns["nombre"];
                 this.columnapellido = base.Columns["apellido"];
                 this.columngrado = base.Columns["grado"];
@@ -8262,6 +8246,8 @@ namespace CRUD_RCTAN1 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
+                this.columndni = new global::System.Data.DataColumn("dni", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndni);
                 this.columnnombre = new global::System.Data.DataColumn("nombre", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnombre);
                 this.columnapellido = new global::System.Data.DataColumn("apellido", typeof(string), null, global::System.Data.MappingType.Element);
@@ -8276,6 +8262,10 @@ namespace CRUD_RCTAN1 {
                 base.Columns.Add(this.columnarma);
                 this.columnseccion = new global::System.Data.DataColumn("seccion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnseccion);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columndni}, true));
+                this.columndni.AllowDBNull = false;
+                this.columndni.Unique = true;
                 this.columnnombre.MaxLength = 50;
                 this.columnapellido.MaxLength = 50;
                 this.columngrado.MaxLength = 10;
@@ -8350,7 +8340,7 @@ namespace CRUD_RCTAN1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RcTan1DataSet1 ds = new RcTan1DataSet1();
+                RcTan1DataSet ds = new RcTan1DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -8369,413 +8359,6 @@ namespace CRUD_RCTAN1 {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "sp_listar_personal_datosDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class sp_listar_todo_personalDataTable : global::System.Data.TypedTableBase<sp_listar_todo_personalRow> {
-            
-            private global::System.Data.DataColumn columnDni;
-            
-            private global::System.Data.DataColumn columnNombre;
-            
-            private global::System.Data.DataColumn columnApellido;
-            
-            private global::System.Data.DataColumn columnfecha_nac;
-            
-            private global::System.Data.DataColumn columnsexo;
-            
-            private global::System.Data.DataColumn columnGrado;
-            
-            private global::System.Data.DataColumn columnseccion;
-            
-            private global::System.Data.DataColumn columnArma;
-            
-            private global::System.Data.DataColumn columnSubunidad;
-            
-            private global::System.Data.DataColumn columnrol_administrativo;
-            
-            private global::System.Data.DataColumn columnrol_combate;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public sp_listar_todo_personalDataTable() {
-                this.TableName = "sp_listar_todo_personal";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal sp_listar_todo_personalDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected sp_listar_todo_personalDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn DniColumn {
-                get {
-                    return this.columnDni;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn NombreColumn {
-                get {
-                    return this.columnNombre;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ApellidoColumn {
-                get {
-                    return this.columnApellido;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn fecha_nacColumn {
-                get {
-                    return this.columnfecha_nac;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn sexoColumn {
-                get {
-                    return this.columnsexo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn GradoColumn {
-                get {
-                    return this.columnGrado;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn seccionColumn {
-                get {
-                    return this.columnseccion;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ArmaColumn {
-                get {
-                    return this.columnArma;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn SubunidadColumn {
-                get {
-                    return this.columnSubunidad;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn rol_administrativoColumn {
-                get {
-                    return this.columnrol_administrativo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn rol_combateColumn {
-                get {
-                    return this.columnrol_combate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public sp_listar_todo_personalRow this[int index] {
-                get {
-                    return ((sp_listar_todo_personalRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event sp_listar_todo_personalRowChangeEventHandler sp_listar_todo_personalRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event sp_listar_todo_personalRowChangeEventHandler sp_listar_todo_personalRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event sp_listar_todo_personalRowChangeEventHandler sp_listar_todo_personalRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event sp_listar_todo_personalRowChangeEventHandler sp_listar_todo_personalRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Addsp_listar_todo_personalRow(sp_listar_todo_personalRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public sp_listar_todo_personalRow Addsp_listar_todo_personalRow(long Dni, string Nombre, string Apellido, System.DateTime fecha_nac, string sexo, string Grado, string seccion, string Arma, string Subunidad, string rol_administrativo, string rol_combate) {
-                sp_listar_todo_personalRow rowsp_listar_todo_personalRow = ((sp_listar_todo_personalRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        Dni,
-                        Nombre,
-                        Apellido,
-                        fecha_nac,
-                        sexo,
-                        Grado,
-                        seccion,
-                        Arma,
-                        Subunidad,
-                        rol_administrativo,
-                        rol_combate};
-                rowsp_listar_todo_personalRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowsp_listar_todo_personalRow);
-                return rowsp_listar_todo_personalRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public sp_listar_todo_personalRow FindByDni(long Dni) {
-                return ((sp_listar_todo_personalRow)(this.Rows.Find(new object[] {
-                            Dni})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                sp_listar_todo_personalDataTable cln = ((sp_listar_todo_personalDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new sp_listar_todo_personalDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal void InitVars() {
-                this.columnDni = base.Columns["Dni"];
-                this.columnNombre = base.Columns["Nombre"];
-                this.columnApellido = base.Columns["Apellido"];
-                this.columnfecha_nac = base.Columns["fecha_nac"];
-                this.columnsexo = base.Columns["sexo"];
-                this.columnGrado = base.Columns["Grado"];
-                this.columnseccion = base.Columns["seccion"];
-                this.columnArma = base.Columns["Arma"];
-                this.columnSubunidad = base.Columns["Subunidad"];
-                this.columnrol_administrativo = base.Columns["rol_administrativo"];
-                this.columnrol_combate = base.Columns["rol_combate"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            private void InitClass() {
-                this.columnDni = new global::System.Data.DataColumn("Dni", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDni);
-                this.columnNombre = new global::System.Data.DataColumn("Nombre", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNombre);
-                this.columnApellido = new global::System.Data.DataColumn("Apellido", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnApellido);
-                this.columnfecha_nac = new global::System.Data.DataColumn("fecha_nac", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfecha_nac);
-                this.columnsexo = new global::System.Data.DataColumn("sexo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsexo);
-                this.columnGrado = new global::System.Data.DataColumn("Grado", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGrado);
-                this.columnseccion = new global::System.Data.DataColumn("seccion", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnseccion);
-                this.columnArma = new global::System.Data.DataColumn("Arma", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnArma);
-                this.columnSubunidad = new global::System.Data.DataColumn("Subunidad", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSubunidad);
-                this.columnrol_administrativo = new global::System.Data.DataColumn("rol_administrativo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnrol_administrativo);
-                this.columnrol_combate = new global::System.Data.DataColumn("rol_combate", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnrol_combate);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnDni}, true));
-                this.columnDni.AllowDBNull = false;
-                this.columnDni.Unique = true;
-                this.columnNombre.MaxLength = 50;
-                this.columnApellido.MaxLength = 50;
-                this.columnsexo.MaxLength = 20;
-                this.columnGrado.MaxLength = 10;
-                this.columnseccion.MaxLength = 50;
-                this.columnArma.MaxLength = 50;
-                this.columnSubunidad.MaxLength = 50;
-                this.columnrol_administrativo.MaxLength = 200;
-                this.columnrol_combate.MaxLength = 200;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public sp_listar_todo_personalRow Newsp_listar_todo_personalRow() {
-                return ((sp_listar_todo_personalRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new sp_listar_todo_personalRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(sp_listar_todo_personalRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.sp_listar_todo_personalRowChanged != null)) {
-                    this.sp_listar_todo_personalRowChanged(this, new sp_listar_todo_personalRowChangeEvent(((sp_listar_todo_personalRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.sp_listar_todo_personalRowChanging != null)) {
-                    this.sp_listar_todo_personalRowChanging(this, new sp_listar_todo_personalRowChangeEvent(((sp_listar_todo_personalRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.sp_listar_todo_personalRowDeleted != null)) {
-                    this.sp_listar_todo_personalRowDeleted(this, new sp_listar_todo_personalRowChangeEvent(((sp_listar_todo_personalRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.sp_listar_todo_personalRowDeleting != null)) {
-                    this.sp_listar_todo_personalRowDeleting(this, new sp_listar_todo_personalRowChangeEvent(((sp_listar_todo_personalRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Removesp_listar_todo_personalRow(sp_listar_todo_personalRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RcTan1DataSet1 ds = new RcTan1DataSet1();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "sp_listar_todo_personalDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -9005,7 +8588,7 @@ namespace CRUD_RCTAN1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RcTan1DataSet1 ds = new RcTan1DataSet1();
+                RcTan1DataSet ds = new RcTan1DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -11482,6 +11065,17 @@ namespace CRUD_RCTAN1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public long dni {
+                get {
+                    return ((long)(this[this.tablesp_listar_personal_datos.dniColumn]));
+                }
+                set {
+                    this[this.tablesp_listar_personal_datos.dniColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string nombre {
                 get {
                     try {
@@ -11679,318 +11273,6 @@ namespace CRUD_RCTAN1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetseccionNull() {
                 this[this.tablesp_listar_personal_datos.seccionColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class sp_listar_todo_personalRow : global::System.Data.DataRow {
-            
-            private sp_listar_todo_personalDataTable tablesp_listar_todo_personal;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal sp_listar_todo_personalRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tablesp_listar_todo_personal = ((sp_listar_todo_personalDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public long Dni {
-                get {
-                    return ((long)(this[this.tablesp_listar_todo_personal.DniColumn]));
-                }
-                set {
-                    this[this.tablesp_listar_todo_personal.DniColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Nombre {
-                get {
-                    try {
-                        return ((string)(this[this.tablesp_listar_todo_personal.NombreColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Nombre\' de la tabla \'sp_listar_todo_personal\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesp_listar_todo_personal.NombreColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Apellido {
-                get {
-                    try {
-                        return ((string)(this[this.tablesp_listar_todo_personal.ApellidoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Apellido\' de la tabla \'sp_listar_todo_personal\' es DBNull" +
-                                ".", e);
-                    }
-                }
-                set {
-                    this[this.tablesp_listar_todo_personal.ApellidoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime fecha_nac {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablesp_listar_todo_personal.fecha_nacColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_nac\' de la tabla \'sp_listar_todo_personal\' es DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this.tablesp_listar_todo_personal.fecha_nacColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string sexo {
-                get {
-                    try {
-                        return ((string)(this[this.tablesp_listar_todo_personal.sexoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'sexo\' de la tabla \'sp_listar_todo_personal\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesp_listar_todo_personal.sexoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Grado {
-                get {
-                    try {
-                        return ((string)(this[this.tablesp_listar_todo_personal.GradoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Grado\' de la tabla \'sp_listar_todo_personal\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesp_listar_todo_personal.GradoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string seccion {
-                get {
-                    try {
-                        return ((string)(this[this.tablesp_listar_todo_personal.seccionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'seccion\' de la tabla \'sp_listar_todo_personal\' es DBNull." +
-                                "", e);
-                    }
-                }
-                set {
-                    this[this.tablesp_listar_todo_personal.seccionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Arma {
-                get {
-                    try {
-                        return ((string)(this[this.tablesp_listar_todo_personal.ArmaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Arma\' de la tabla \'sp_listar_todo_personal\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesp_listar_todo_personal.ArmaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Subunidad {
-                get {
-                    try {
-                        return ((string)(this[this.tablesp_listar_todo_personal.SubunidadColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Subunidad\' de la tabla \'sp_listar_todo_personal\' es DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this.tablesp_listar_todo_personal.SubunidadColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string rol_administrativo {
-                get {
-                    try {
-                        return ((string)(this[this.tablesp_listar_todo_personal.rol_administrativoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'rol_administrativo\' de la tabla \'sp_listar_todo_personal\'" +
-                                " es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesp_listar_todo_personal.rol_administrativoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string rol_combate {
-                get {
-                    try {
-                        return ((string)(this[this.tablesp_listar_todo_personal.rol_combateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'rol_combate\' de la tabla \'sp_listar_todo_personal\' es DBN" +
-                                "ull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesp_listar_todo_personal.rol_combateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsNombreNull() {
-                return this.IsNull(this.tablesp_listar_todo_personal.NombreColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetNombreNull() {
-                this[this.tablesp_listar_todo_personal.NombreColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsApellidoNull() {
-                return this.IsNull(this.tablesp_listar_todo_personal.ApellidoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetApellidoNull() {
-                this[this.tablesp_listar_todo_personal.ApellidoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isfecha_nacNull() {
-                return this.IsNull(this.tablesp_listar_todo_personal.fecha_nacColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setfecha_nacNull() {
-                this[this.tablesp_listar_todo_personal.fecha_nacColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IssexoNull() {
-                return this.IsNull(this.tablesp_listar_todo_personal.sexoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetsexoNull() {
-                this[this.tablesp_listar_todo_personal.sexoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsGradoNull() {
-                return this.IsNull(this.tablesp_listar_todo_personal.GradoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetGradoNull() {
-                this[this.tablesp_listar_todo_personal.GradoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsseccionNull() {
-                return this.IsNull(this.tablesp_listar_todo_personal.seccionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetseccionNull() {
-                this[this.tablesp_listar_todo_personal.seccionColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsArmaNull() {
-                return this.IsNull(this.tablesp_listar_todo_personal.ArmaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetArmaNull() {
-                this[this.tablesp_listar_todo_personal.ArmaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsSubunidadNull() {
-                return this.IsNull(this.tablesp_listar_todo_personal.SubunidadColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetSubunidadNull() {
-                this[this.tablesp_listar_todo_personal.SubunidadColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isrol_administrativoNull() {
-                return this.IsNull(this.tablesp_listar_todo_personal.rol_administrativoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setrol_administrativoNull() {
-                this[this.tablesp_listar_todo_personal.rol_administrativoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isrol_combateNull() {
-                return this.IsNull(this.tablesp_listar_todo_personal.rol_combateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setrol_combateNull() {
-                this[this.tablesp_listar_todo_personal.rol_combateColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -12857,40 +12139,6 @@ namespace CRUD_RCTAN1 {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class sp_listar_todo_personalRowChangeEvent : global::System.EventArgs {
-            
-            private sp_listar_todo_personalRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public sp_listar_todo_personalRowChangeEvent(sp_listar_todo_personalRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public sp_listar_todo_personalRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public class sp_verificar_usuarioRowChangeEvent : global::System.EventArgs {
             
             private sp_verificar_usuarioRow eventRow;
@@ -12922,7 +12170,7 @@ namespace CRUD_RCTAN1 {
         }
     }
 }
-namespace CRUD_RCTAN1.RcTan1DataSet1TableAdapters {
+namespace CRUD_RCTAN1.RcTan1DataSetTableAdapters {
     
     
     /// <summary>
@@ -13103,7 +12351,7 @@ SELECT id_admin, usuario, contrasenia FROM Administradores WHERE (id_admin = @id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RcTan1DataSet1.AdministradoresDataTable dataTable) {
+        public virtual int Fill(RcTan1DataSet.AdministradoresDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -13116,9 +12364,9 @@ SELECT id_admin, usuario, contrasenia FROM Administradores WHERE (id_admin = @id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RcTan1DataSet1.AdministradoresDataTable GetData() {
+        public virtual RcTan1DataSet.AdministradoresDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            RcTan1DataSet1.AdministradoresDataTable dataTable = new RcTan1DataSet1.AdministradoresDataTable();
+            RcTan1DataSet.AdministradoresDataTable dataTable = new RcTan1DataSet.AdministradoresDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -13126,14 +12374,14 @@ SELECT id_admin, usuario, contrasenia FROM Administradores WHERE (id_admin = @id
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RcTan1DataSet1.AdministradoresDataTable dataTable) {
+        public virtual int Update(RcTan1DataSet.AdministradoresDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RcTan1DataSet1 dataSet) {
+        public virtual int Update(RcTan1DataSet dataSet) {
             return this.Adapter.Update(dataSet, "Administradores");
         }
         
@@ -13455,7 +12703,7 @@ SELECT id_admin, usuario, contrasenia FROM Administradores WHERE (id_admin = @id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RcTan1DataSet1.armasDataTable dataTable) {
+        public virtual int Fill(RcTan1DataSet.armasDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -13468,9 +12716,9 @@ SELECT id_admin, usuario, contrasenia FROM Administradores WHERE (id_admin = @id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RcTan1DataSet1.armasDataTable GetData() {
+        public virtual RcTan1DataSet.armasDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            RcTan1DataSet1.armasDataTable dataTable = new RcTan1DataSet1.armasDataTable();
+            RcTan1DataSet.armasDataTable dataTable = new RcTan1DataSet.armasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -13478,14 +12726,14 @@ SELECT id_admin, usuario, contrasenia FROM Administradores WHERE (id_admin = @id
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RcTan1DataSet1.armasDataTable dataTable) {
+        public virtual int Update(RcTan1DataSet.armasDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RcTan1DataSet1 dataSet) {
+        public virtual int Update(RcTan1DataSet dataSet) {
             return this.Adapter.Update(dataSet, "armas");
         }
         
@@ -13785,7 +13033,7 @@ SELECT id_condicion, condicion, descripcion FROM condiciones_tiros WHERE (id_con
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RcTan1DataSet1.condiciones_tirosDataTable dataTable) {
+        public virtual int Fill(RcTan1DataSet.condiciones_tirosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -13798,9 +13046,9 @@ SELECT id_condicion, condicion, descripcion FROM condiciones_tiros WHERE (id_con
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RcTan1DataSet1.condiciones_tirosDataTable GetData() {
+        public virtual RcTan1DataSet.condiciones_tirosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            RcTan1DataSet1.condiciones_tirosDataTable dataTable = new RcTan1DataSet1.condiciones_tirosDataTable();
+            RcTan1DataSet.condiciones_tirosDataTable dataTable = new RcTan1DataSet.condiciones_tirosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -13808,14 +13056,14 @@ SELECT id_condicion, condicion, descripcion FROM condiciones_tiros WHERE (id_con
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RcTan1DataSet1.condiciones_tirosDataTable dataTable) {
+        public virtual int Update(RcTan1DataSet.condiciones_tirosDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RcTan1DataSet1 dataSet) {
+        public virtual int Update(RcTan1DataSet dataSet) {
             return this.Adapter.Update(dataSet, "condiciones_tiros");
         }
         
@@ -14138,7 +13386,7 @@ SELECT id_estado_civil, estado_civil FROM estados_civiles WHERE (id_estado_civil
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RcTan1DataSet1.estados_civilesDataTable dataTable) {
+        public virtual int Fill(RcTan1DataSet.estados_civilesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -14151,9 +13399,9 @@ SELECT id_estado_civil, estado_civil FROM estados_civiles WHERE (id_estado_civil
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RcTan1DataSet1.estados_civilesDataTable GetData() {
+        public virtual RcTan1DataSet.estados_civilesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            RcTan1DataSet1.estados_civilesDataTable dataTable = new RcTan1DataSet1.estados_civilesDataTable();
+            RcTan1DataSet.estados_civilesDataTable dataTable = new RcTan1DataSet.estados_civilesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -14161,14 +13409,14 @@ SELECT id_estado_civil, estado_civil FROM estados_civiles WHERE (id_estado_civil
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RcTan1DataSet1.estados_civilesDataTable dataTable) {
+        public virtual int Update(RcTan1DataSet.estados_civilesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RcTan1DataSet1 dataSet) {
+        public virtual int Update(RcTan1DataSet dataSet) {
             return this.Adapter.Update(dataSet, "estados_civiles");
         }
         
@@ -14475,7 +13723,7 @@ SELECT id_grado, grado, abreviacion, id_tipos_grados FROM grados WHERE (id_grado
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RcTan1DataSet1.gradosDataTable dataTable) {
+        public virtual int Fill(RcTan1DataSet.gradosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -14488,9 +13736,9 @@ SELECT id_grado, grado, abreviacion, id_tipos_grados FROM grados WHERE (id_grado
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RcTan1DataSet1.gradosDataTable GetData() {
+        public virtual RcTan1DataSet.gradosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            RcTan1DataSet1.gradosDataTable dataTable = new RcTan1DataSet1.gradosDataTable();
+            RcTan1DataSet.gradosDataTable dataTable = new RcTan1DataSet.gradosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -14498,14 +13746,14 @@ SELECT id_grado, grado, abreviacion, id_tipos_grados FROM grados WHERE (id_grado
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RcTan1DataSet1.gradosDataTable dataTable) {
+        public virtual int Update(RcTan1DataSet.gradosDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RcTan1DataSet1 dataSet) {
+        public virtual int Update(RcTan1DataSet dataSet) {
             return this.Adapter.Update(dataSet, "grados");
         }
         
@@ -14918,7 +14166,7 @@ SELECT Nombre, Apellido, fecha_nac, id_sexo, id_grado, id_seccion, id_arma, rol_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RcTan1DataSet1.personalDataTable dataTable) {
+        public virtual int Fill(RcTan1DataSet.personalDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -14931,9 +14179,9 @@ SELECT Nombre, Apellido, fecha_nac, id_sexo, id_grado, id_seccion, id_arma, rol_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RcTan1DataSet1.personalDataTable GetData() {
+        public virtual RcTan1DataSet.personalDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            RcTan1DataSet1.personalDataTable dataTable = new RcTan1DataSet1.personalDataTable();
+            RcTan1DataSet.personalDataTable dataTable = new RcTan1DataSet.personalDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -14941,14 +14189,14 @@ SELECT Nombre, Apellido, fecha_nac, id_sexo, id_grado, id_seccion, id_arma, rol_
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RcTan1DataSet1.personalDataTable dataTable) {
+        public virtual int Update(RcTan1DataSet.personalDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RcTan1DataSet1 dataSet) {
+        public virtual int Update(RcTan1DataSet dataSet) {
             return this.Adapter.Update(dataSet, "personal");
         }
         
@@ -15565,7 +14813,7 @@ SELECT id_prueba, id_condicion, fecha, calificacion, dni, observaciones FROM pru
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RcTan1DataSet1.pruebas_tiroDataTable dataTable) {
+        public virtual int Fill(RcTan1DataSet.pruebas_tiroDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -15578,9 +14826,9 @@ SELECT id_prueba, id_condicion, fecha, calificacion, dni, observaciones FROM pru
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RcTan1DataSet1.pruebas_tiroDataTable GetData() {
+        public virtual RcTan1DataSet.pruebas_tiroDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            RcTan1DataSet1.pruebas_tiroDataTable dataTable = new RcTan1DataSet1.pruebas_tiroDataTable();
+            RcTan1DataSet.pruebas_tiroDataTable dataTable = new RcTan1DataSet.pruebas_tiroDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -15588,14 +14836,14 @@ SELECT id_prueba, id_condicion, fecha, calificacion, dni, observaciones FROM pru
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RcTan1DataSet1.pruebas_tiroDataTable dataTable) {
+        public virtual int Update(RcTan1DataSet.pruebas_tiroDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RcTan1DataSet1 dataSet) {
+        public virtual int Update(RcTan1DataSet dataSet) {
             return this.Adapter.Update(dataSet, "pruebas_tiro");
         }
         
@@ -16007,7 +15255,7 @@ SELECT id_rol_administrativo, rol_administrativo, id_tipo_rol FROM roles_adminis
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RcTan1DataSet1.roles_administrativosDataTable dataTable) {
+        public virtual int Fill(RcTan1DataSet.roles_administrativosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -16020,9 +15268,9 @@ SELECT id_rol_administrativo, rol_administrativo, id_tipo_rol FROM roles_adminis
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RcTan1DataSet1.roles_administrativosDataTable GetData() {
+        public virtual RcTan1DataSet.roles_administrativosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            RcTan1DataSet1.roles_administrativosDataTable dataTable = new RcTan1DataSet1.roles_administrativosDataTable();
+            RcTan1DataSet.roles_administrativosDataTable dataTable = new RcTan1DataSet.roles_administrativosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -16030,14 +15278,14 @@ SELECT id_rol_administrativo, rol_administrativo, id_tipo_rol FROM roles_adminis
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RcTan1DataSet1.roles_administrativosDataTable dataTable) {
+        public virtual int Update(RcTan1DataSet.roles_administrativosDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RcTan1DataSet1 dataSet) {
+        public virtual int Update(RcTan1DataSet dataSet) {
             return this.Adapter.Update(dataSet, "roles_administrativos");
         }
         
@@ -16365,7 +15613,7 @@ SELECT id_rol_combate, rol_combate, id_tipo_rol FROM roles_combate WHERE (id_rol
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RcTan1DataSet1.roles_combateDataTable dataTable) {
+        public virtual int Fill(RcTan1DataSet.roles_combateDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -16378,9 +15626,9 @@ SELECT id_rol_combate, rol_combate, id_tipo_rol FROM roles_combate WHERE (id_rol
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RcTan1DataSet1.roles_combateDataTable GetData() {
+        public virtual RcTan1DataSet.roles_combateDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            RcTan1DataSet1.roles_combateDataTable dataTable = new RcTan1DataSet1.roles_combateDataTable();
+            RcTan1DataSet.roles_combateDataTable dataTable = new RcTan1DataSet.roles_combateDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -16388,14 +15636,14 @@ SELECT id_rol_combate, rol_combate, id_tipo_rol FROM roles_combate WHERE (id_rol
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RcTan1DataSet1.roles_combateDataTable dataTable) {
+        public virtual int Update(RcTan1DataSet.roles_combateDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RcTan1DataSet1 dataSet) {
+        public virtual int Update(RcTan1DataSet dataSet) {
             return this.Adapter.Update(dataSet, "roles_combate");
         }
         
@@ -16730,7 +15978,7 @@ SELECT id_sala_armas, ni_fal, ni_pistola, id_personal FROM sala_armas WHERE (id_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RcTan1DataSet1.sala_armasDataTable dataTable) {
+        public virtual int Fill(RcTan1DataSet.sala_armasDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -16743,9 +15991,9 @@ SELECT id_sala_armas, ni_fal, ni_pistola, id_personal FROM sala_armas WHERE (id_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RcTan1DataSet1.sala_armasDataTable GetData() {
+        public virtual RcTan1DataSet.sala_armasDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            RcTan1DataSet1.sala_armasDataTable dataTable = new RcTan1DataSet1.sala_armasDataTable();
+            RcTan1DataSet.sala_armasDataTable dataTable = new RcTan1DataSet.sala_armasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -16753,14 +16001,14 @@ SELECT id_sala_armas, ni_fal, ni_pistola, id_personal FROM sala_armas WHERE (id_
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RcTan1DataSet1.sala_armasDataTable dataTable) {
+        public virtual int Update(RcTan1DataSet.sala_armasDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RcTan1DataSet1 dataSet) {
+        public virtual int Update(RcTan1DataSet dataSet) {
             return this.Adapter.Update(dataSet, "sala_armas");
         }
         
@@ -17109,7 +16357,7 @@ SELECT id_seccion, seccion FROM secciones WHERE (id_seccion = @id_seccion)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RcTan1DataSet1.seccionesDataTable dataTable) {
+        public virtual int Fill(RcTan1DataSet.seccionesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -17122,9 +16370,9 @@ SELECT id_seccion, seccion FROM secciones WHERE (id_seccion = @id_seccion)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RcTan1DataSet1.seccionesDataTable GetData() {
+        public virtual RcTan1DataSet.seccionesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            RcTan1DataSet1.seccionesDataTable dataTable = new RcTan1DataSet1.seccionesDataTable();
+            RcTan1DataSet.seccionesDataTable dataTable = new RcTan1DataSet.seccionesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -17132,14 +16380,14 @@ SELECT id_seccion, seccion FROM secciones WHERE (id_seccion = @id_seccion)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RcTan1DataSet1.seccionesDataTable dataTable) {
+        public virtual int Update(RcTan1DataSet.seccionesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RcTan1DataSet1 dataSet) {
+        public virtual int Update(RcTan1DataSet dataSet) {
             return this.Adapter.Update(dataSet, "secciones");
         }
         
@@ -17433,7 +16681,7 @@ SELECT id_seccion, seccion FROM secciones WHERE (id_seccion = @id_seccion)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RcTan1DataSet1.sexosDataTable dataTable) {
+        public virtual int Fill(RcTan1DataSet.sexosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -17446,9 +16694,9 @@ SELECT id_seccion, seccion FROM secciones WHERE (id_seccion = @id_seccion)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RcTan1DataSet1.sexosDataTable GetData() {
+        public virtual RcTan1DataSet.sexosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            RcTan1DataSet1.sexosDataTable dataTable = new RcTan1DataSet1.sexosDataTable();
+            RcTan1DataSet.sexosDataTable dataTable = new RcTan1DataSet.sexosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -17456,14 +16704,14 @@ SELECT id_seccion, seccion FROM secciones WHERE (id_seccion = @id_seccion)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RcTan1DataSet1.sexosDataTable dataTable) {
+        public virtual int Update(RcTan1DataSet.sexosDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RcTan1DataSet1 dataSet) {
+        public virtual int Update(RcTan1DataSet dataSet) {
             return this.Adapter.Update(dataSet, "sexos");
         }
         
@@ -17757,7 +17005,7 @@ SELECT id_subunidad, subunidad FROM subunidades WHERE (id_subunidad = @id_subuni
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RcTan1DataSet1.subunidadesDataTable dataTable) {
+        public virtual int Fill(RcTan1DataSet.subunidadesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -17770,9 +17018,9 @@ SELECT id_subunidad, subunidad FROM subunidades WHERE (id_subunidad = @id_subuni
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RcTan1DataSet1.subunidadesDataTable GetData() {
+        public virtual RcTan1DataSet.subunidadesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            RcTan1DataSet1.subunidadesDataTable dataTable = new RcTan1DataSet1.subunidadesDataTable();
+            RcTan1DataSet.subunidadesDataTable dataTable = new RcTan1DataSet.subunidadesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -17780,14 +17028,14 @@ SELECT id_subunidad, subunidad FROM subunidades WHERE (id_subunidad = @id_subuni
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RcTan1DataSet1.subunidadesDataTable dataTable) {
+        public virtual int Update(RcTan1DataSet.subunidadesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RcTan1DataSet1 dataSet) {
+        public virtual int Update(RcTan1DataSet dataSet) {
             return this.Adapter.Update(dataSet, "subunidades");
         }
         
@@ -18082,7 +17330,7 @@ SELECT id_tipos_grados, tipo_grado FROM tipos_grados WHERE (id_tipos_grados = @i
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RcTan1DataSet1.tipos_gradosDataTable dataTable) {
+        public virtual int Fill(RcTan1DataSet.tipos_gradosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -18095,9 +17343,9 @@ SELECT id_tipos_grados, tipo_grado FROM tipos_grados WHERE (id_tipos_grados = @i
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RcTan1DataSet1.tipos_gradosDataTable GetData() {
+        public virtual RcTan1DataSet.tipos_gradosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            RcTan1DataSet1.tipos_gradosDataTable dataTable = new RcTan1DataSet1.tipos_gradosDataTable();
+            RcTan1DataSet.tipos_gradosDataTable dataTable = new RcTan1DataSet.tipos_gradosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -18105,14 +17353,14 @@ SELECT id_tipos_grados, tipo_grado FROM tipos_grados WHERE (id_tipos_grados = @i
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RcTan1DataSet1.tipos_gradosDataTable dataTable) {
+        public virtual int Update(RcTan1DataSet.tipos_gradosDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RcTan1DataSet1 dataSet) {
+        public virtual int Update(RcTan1DataSet dataSet) {
             return this.Adapter.Update(dataSet, "tipos_grados");
         }
         
@@ -18406,7 +17654,7 @@ SELECT id_tipo_rol, tipo_rol FROM tipos_roles WHERE (id_tipo_rol = @id_tipo_rol)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RcTan1DataSet1.tipos_rolesDataTable dataTable) {
+        public virtual int Fill(RcTan1DataSet.tipos_rolesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -18419,9 +17667,9 @@ SELECT id_tipo_rol, tipo_rol FROM tipos_roles WHERE (id_tipo_rol = @id_tipo_rol)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RcTan1DataSet1.tipos_rolesDataTable GetData() {
+        public virtual RcTan1DataSet.tipos_rolesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            RcTan1DataSet1.tipos_rolesDataTable dataTable = new RcTan1DataSet1.tipos_rolesDataTable();
+            RcTan1DataSet.tipos_rolesDataTable dataTable = new RcTan1DataSet.tipos_rolesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -18429,14 +17677,14 @@ SELECT id_tipo_rol, tipo_rol FROM tipos_roles WHERE (id_tipo_rol = @id_tipo_rol)
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RcTan1DataSet1.tipos_rolesDataTable dataTable) {
+        public virtual int Update(RcTan1DataSet.tipos_rolesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(RcTan1DataSet1 dataSet) {
+        public virtual int Update(RcTan1DataSet dataSet) {
             return this.Adapter.Update(dataSet, "tipos_roles");
         }
         
@@ -18706,7 +17954,7 @@ SELECT id_tipo_rol, tipo_rol FROM tipos_roles WHERE (id_tipo_rol = @id_tipo_rol)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RcTan1DataSet1.sp_consultar_armasDataTable dataTable) {
+        public virtual int Fill(RcTan1DataSet.sp_consultar_armasDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -18719,9 +17967,9 @@ SELECT id_tipo_rol, tipo_rol FROM tipos_roles WHERE (id_tipo_rol = @id_tipo_rol)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RcTan1DataSet1.sp_consultar_armasDataTable GetData() {
+        public virtual RcTan1DataSet.sp_consultar_armasDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            RcTan1DataSet1.sp_consultar_armasDataTable dataTable = new RcTan1DataSet1.sp_consultar_armasDataTable();
+            RcTan1DataSet.sp_consultar_armasDataTable dataTable = new RcTan1DataSet.sp_consultar_armasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -18876,7 +18124,7 @@ SELECT id_tipo_rol, tipo_rol FROM tipos_roles WHERE (id_tipo_rol = @id_tipo_rol)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RcTan1DataSet1.sp_consultar_gradosDataTable dataTable, global::System.Nullable<int> id_tipos_grados) {
+        public virtual int Fill(RcTan1DataSet.sp_consultar_gradosDataTable dataTable, global::System.Nullable<int> id_tipos_grados) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((id_tipos_grados.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(id_tipos_grados.Value));
@@ -18895,7 +18143,7 @@ SELECT id_tipo_rol, tipo_rol FROM tipos_roles WHERE (id_tipo_rol = @id_tipo_rol)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RcTan1DataSet1.sp_consultar_gradosDataTable GetData(global::System.Nullable<int> id_tipos_grados) {
+        public virtual RcTan1DataSet.sp_consultar_gradosDataTable GetData(global::System.Nullable<int> id_tipos_grados) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((id_tipos_grados.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(id_tipos_grados.Value));
@@ -18903,7 +18151,7 @@ SELECT id_tipo_rol, tipo_rol FROM tipos_roles WHERE (id_tipo_rol = @id_tipo_rol)
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            RcTan1DataSet1.sp_consultar_gradosDataTable dataTable = new RcTan1DataSet1.sp_consultar_gradosDataTable();
+            RcTan1DataSet.sp_consultar_gradosDataTable dataTable = new RcTan1DataSet.sp_consultar_gradosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -19068,7 +18316,7 @@ SELECT id_tipo_rol, tipo_rol FROM tipos_roles WHERE (id_tipo_rol = @id_tipo_rol)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RcTan1DataSet1.sp_consultar_personaDataTable dataTable, global::System.Nullable<int> Dni) {
+        public virtual int Fill(RcTan1DataSet.sp_consultar_personaDataTable dataTable, global::System.Nullable<int> Dni) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((Dni.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Dni.Value));
@@ -19087,7 +18335,7 @@ SELECT id_tipo_rol, tipo_rol FROM tipos_roles WHERE (id_tipo_rol = @id_tipo_rol)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RcTan1DataSet1.sp_consultar_personaDataTable GetData(global::System.Nullable<int> Dni) {
+        public virtual RcTan1DataSet.sp_consultar_personaDataTable GetData(global::System.Nullable<int> Dni) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((Dni.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Dni.Value));
@@ -19095,7 +18343,7 @@ SELECT id_tipo_rol, tipo_rol FROM tipos_roles WHERE (id_tipo_rol = @id_tipo_rol)
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            RcTan1DataSet1.sp_consultar_personaDataTable dataTable = new RcTan1DataSet1.sp_consultar_personaDataTable();
+            RcTan1DataSet.sp_consultar_personaDataTable dataTable = new RcTan1DataSet.sp_consultar_personaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -19249,7 +18497,7 @@ SELECT id_tipo_rol, tipo_rol FROM tipos_roles WHERE (id_tipo_rol = @id_tipo_rol)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RcTan1DataSet1.sp_consultar_seccionesDataTable dataTable) {
+        public virtual int Fill(RcTan1DataSet.sp_consultar_seccionesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -19262,9 +18510,9 @@ SELECT id_tipo_rol, tipo_rol FROM tipos_roles WHERE (id_tipo_rol = @id_tipo_rol)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RcTan1DataSet1.sp_consultar_seccionesDataTable GetData() {
+        public virtual RcTan1DataSet.sp_consultar_seccionesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            RcTan1DataSet1.sp_consultar_seccionesDataTable dataTable = new RcTan1DataSet1.sp_consultar_seccionesDataTable();
+            RcTan1DataSet.sp_consultar_seccionesDataTable dataTable = new RcTan1DataSet.sp_consultar_seccionesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -19418,7 +18666,7 @@ SELECT id_tipo_rol, tipo_rol FROM tipos_roles WHERE (id_tipo_rol = @id_tipo_rol)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RcTan1DataSet1.sp_consultar_subunidadesDataTable dataTable) {
+        public virtual int Fill(RcTan1DataSet.sp_consultar_subunidadesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -19431,9 +18679,9 @@ SELECT id_tipo_rol, tipo_rol FROM tipos_roles WHERE (id_tipo_rol = @id_tipo_rol)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RcTan1DataSet1.sp_consultar_subunidadesDataTable GetData() {
+        public virtual RcTan1DataSet.sp_consultar_subunidadesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            RcTan1DataSet1.sp_consultar_subunidadesDataTable dataTable = new RcTan1DataSet1.sp_consultar_subunidadesDataTable();
+            RcTan1DataSet.sp_consultar_subunidadesDataTable dataTable = new RcTan1DataSet.sp_consultar_subunidadesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -19587,7 +18835,7 @@ SELECT id_tipo_rol, tipo_rol FROM tipos_roles WHERE (id_tipo_rol = @id_tipo_rol)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RcTan1DataSet1.sp_consultar_tipos_gradosDataTable dataTable) {
+        public virtual int Fill(RcTan1DataSet.sp_consultar_tipos_gradosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -19600,9 +18848,9 @@ SELECT id_tipo_rol, tipo_rol FROM tipos_roles WHERE (id_tipo_rol = @id_tipo_rol)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RcTan1DataSet1.sp_consultar_tipos_gradosDataTable GetData() {
+        public virtual RcTan1DataSet.sp_consultar_tipos_gradosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            RcTan1DataSet1.sp_consultar_tipos_gradosDataTable dataTable = new RcTan1DataSet1.sp_consultar_tipos_gradosDataTable();
+            RcTan1DataSet.sp_consultar_tipos_gradosDataTable dataTable = new RcTan1DataSet.sp_consultar_tipos_gradosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -19756,7 +19004,7 @@ SELECT id_tipo_rol, tipo_rol FROM tipos_roles WHERE (id_tipo_rol = @id_tipo_rol)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RcTan1DataSet1.sp_consultar_tipos_rolesDataTable dataTable) {
+        public virtual int Fill(RcTan1DataSet.sp_consultar_tipos_rolesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -19769,9 +19017,9 @@ SELECT id_tipo_rol, tipo_rol FROM tipos_roles WHERE (id_tipo_rol = @id_tipo_rol)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RcTan1DataSet1.sp_consultar_tipos_rolesDataTable GetData() {
+        public virtual RcTan1DataSet.sp_consultar_tipos_rolesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            RcTan1DataSet1.sp_consultar_tipos_rolesDataTable dataTable = new RcTan1DataSet1.sp_consultar_tipos_rolesDataTable();
+            RcTan1DataSet.sp_consultar_tipos_rolesDataTable dataTable = new RcTan1DataSet.sp_consultar_tipos_rolesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -19928,7 +19176,7 @@ SELECT id_tipo_rol, tipo_rol FROM tipos_roles WHERE (id_tipo_rol = @id_tipo_rol)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RcTan1DataSet1.sp_listar_personalDataTable dataTable) {
+        public virtual int Fill(RcTan1DataSet.sp_listar_personalDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -19941,9 +19189,9 @@ SELECT id_tipo_rol, tipo_rol FROM tipos_roles WHERE (id_tipo_rol = @id_tipo_rol)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RcTan1DataSet1.sp_listar_personalDataTable GetData() {
+        public virtual RcTan1DataSet.sp_listar_personalDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            RcTan1DataSet1.sp_listar_personalDataTable dataTable = new RcTan1DataSet1.sp_listar_personalDataTable();
+            RcTan1DataSet.sp_listar_personalDataTable dataTable = new RcTan1DataSet.sp_listar_personalDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -20070,6 +19318,7 @@ SELECT id_tipo_rol, tipo_rol FROM tipos_roles WHERE (id_tipo_rol = @id_tipo_rol)
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "sp_listar_personal_datos";
+            tableMapping.ColumnMappings.Add("dni", "dni");
             tableMapping.ColumnMappings.Add("nombre", "nombre");
             tableMapping.ColumnMappings.Add("apellido", "apellido");
             tableMapping.ColumnMappings.Add("grado", "grado");
@@ -20102,7 +19351,7 @@ SELECT id_tipo_rol, tipo_rol FROM tipos_roles WHERE (id_tipo_rol = @id_tipo_rol)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RcTan1DataSet1.sp_listar_personal_datosDataTable dataTable) {
+        public virtual int Fill(RcTan1DataSet.sp_listar_personal_datosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -20115,187 +19364,9 @@ SELECT id_tipo_rol, tipo_rol FROM tipos_roles WHERE (id_tipo_rol = @id_tipo_rol)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RcTan1DataSet1.sp_listar_personal_datosDataTable GetData() {
+        public virtual RcTan1DataSet.sp_listar_personal_datosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            RcTan1DataSet1.sp_listar_personal_datosDataTable dataTable = new RcTan1DataSet1.sp_listar_personal_datosDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class sp_listar_todo_personalTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public sp_listar_todo_personalTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "sp_listar_todo_personal";
-            tableMapping.ColumnMappings.Add("Dni", "Dni");
-            tableMapping.ColumnMappings.Add("Nombre", "Nombre");
-            tableMapping.ColumnMappings.Add("Apellido", "Apellido");
-            tableMapping.ColumnMappings.Add("fecha_nac", "fecha_nac");
-            tableMapping.ColumnMappings.Add("sexo", "sexo");
-            tableMapping.ColumnMappings.Add("Grado", "Grado");
-            tableMapping.ColumnMappings.Add("seccion", "seccion");
-            tableMapping.ColumnMappings.Add("Arma", "Arma");
-            tableMapping.ColumnMappings.Add("Subunidad", "Subunidad");
-            tableMapping.ColumnMappings.Add("rol_administrativo", "rol_administrativo");
-            tableMapping.ColumnMappings.Add("rol_combate", "rol_combate");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CRUD_RCTAN1.Properties.Settings.Default.RcTan1ConnectionString1;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.sp_listar_todo_personal";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RcTan1DataSet1.sp_listar_todo_personalDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RcTan1DataSet1.sp_listar_todo_personalDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            RcTan1DataSet1.sp_listar_todo_personalDataTable dataTable = new RcTan1DataSet1.sp_listar_todo_personalDataTable();
+            RcTan1DataSet.sp_listar_personal_datosDataTable dataTable = new RcTan1DataSet.sp_listar_personal_datosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -20450,7 +19521,7 @@ SELECT id_tipo_rol, tipo_rol FROM tipos_roles WHERE (id_tipo_rol = @id_tipo_rol)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RcTan1DataSet1.sp_verificar_usuarioDataTable dataTable, string usuario, string contraseña) {
+        public virtual int Fill(RcTan1DataSet.sp_verificar_usuarioDataTable dataTable, string usuario, string contraseña) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((usuario == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -20475,7 +19546,7 @@ SELECT id_tipo_rol, tipo_rol FROM tipos_roles WHERE (id_tipo_rol = @id_tipo_rol)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RcTan1DataSet1.sp_verificar_usuarioDataTable GetData(string usuario, string contraseña) {
+        public virtual RcTan1DataSet.sp_verificar_usuarioDataTable GetData(string usuario, string contraseña) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((usuario == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -20489,7 +19560,7 @@ SELECT id_tipo_rol, tipo_rol FROM tipos_roles WHERE (id_tipo_rol = @id_tipo_rol)
             else {
                 this.Adapter.SelectCommand.Parameters[2].Value = ((string)(contraseña));
             }
-            RcTan1DataSet1.sp_verificar_usuarioDataTable dataTable = new RcTan1DataSet1.sp_verificar_usuarioDataTable();
+            RcTan1DataSet.sp_verificar_usuarioDataTable dataTable = new RcTan1DataSet.sp_verificar_usuarioDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -21181,7 +20252,7 @@ SELECT id_tipo_rol, tipo_rol FROM tipos_roles WHERE (id_tipo_rol = @id_tipo_rol)
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(RcTan1DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(RcTan1DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._tipos_gradosTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.tipos_grados.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -21326,7 +20397,7 @@ SELECT id_tipo_rol, tipo_rol FROM tipos_roles WHERE (id_tipo_rol = @id_tipo_rol)
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(RcTan1DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(RcTan1DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._tipos_gradosTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.tipos_grados.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -21456,7 +20527,7 @@ SELECT id_tipo_rol, tipo_rol FROM tipos_roles WHERE (id_tipo_rol = @id_tipo_rol)
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(RcTan1DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(RcTan1DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._estados_civilesTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.estados_civiles.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -21610,7 +20681,7 @@ SELECT id_tipo_rol, tipo_rol FROM tipos_roles WHERE (id_tipo_rol = @id_tipo_rol)
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(RcTan1DataSet1 dataSet) {
+        public virtual int UpdateAll(RcTan1DataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

@@ -17,9 +17,8 @@ namespace CRUD_RCTAN1.Formularios.Consultas
             InitializeComponent();
         }
 
-        private void Consulta1_Load(object sender, EventArgs e)
+        private void FrmConsulta1_Load(object sender, EventArgs e)
         {
-
 
             this.reportViewer1.RefreshReport();
         }

@@ -92,14 +92,12 @@ namespace CRUD_RCTAN1.Formularios
 
         private void btnCargarListado_Click(object sender, EventArgs e)
         {
-            if (cboConsultas.SelectedIndex == 0) 
-            {
+            
 
                 FrmConsulta1 carga = new FrmConsulta1();
                 ////this.Hide();
                 carga.ShowDialog();
-            }
-                
+              
 
             
         }
