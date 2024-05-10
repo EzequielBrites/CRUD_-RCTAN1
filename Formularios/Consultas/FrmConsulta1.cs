@@ -22,5 +22,10 @@ namespace CRUD_RCTAN1.Formularios.Consultas
 
             this.reportViewer1.RefreshReport();
         }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

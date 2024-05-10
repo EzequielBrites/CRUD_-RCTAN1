@@ -26,8 +26,9 @@ namespace CRUD_RCTAN1.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-US23EPI\\SQLEXPRESS;Initial Catalog=RcTan1;Integrated Security" +
-            "=True;Encrypt=True;TrustServerCertificate=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=tcp:operaciones1.database.windows.net,1433;Initial Catalog=RcTan1;Persist " +
+            "Security Info=False;User ID=Operaciones;Password=114057Tup;MultipleActiveResultS" +
+            "ets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")]
         public string RcTan1ConnectionString {
             get {
                 return ((string)(this["RcTan1ConnectionString"]));
@@ -37,11 +38,24 @@ namespace CRUD_RCTAN1.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=operaciones1.database.windows.net;Initial Catalog=RcTan1;User ID=Oper" +
-            "aciones")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=tcp:operaciones1.database.windows.net,1433;Initial Catalog=RcTan1;Persist " +
+            "Security Info=False;User ID=Operaciones;Password=114057Tup;MultipleActiveResultS" +
+            "ets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")]
         public string RcTan1ConnectionString1 {
             get {
                 return ((string)(this["RcTan1ConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=operaciones1.database.windows.net;Initial Catalog=RcTan1;Persist Secu" +
+            "rity Info=True;User ID=Operaciones;Password=114057Tup;Encrypt=True;TrustServerCe" +
+            "rtificate=False;Connection Timeout=30;")]
+        public string RcTan1ConnectionString2 {
+            get {
+                return ((string)(this["RcTan1ConnectionString2"]));
             }
         }
     }
