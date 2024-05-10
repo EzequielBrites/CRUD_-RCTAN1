@@ -293,12 +293,6 @@
     <Compile Include="Datos\Dbhelper.cs" />
     <Compile Include="Dominio\Parametro.cs" />
     <Compile Include="Dominio\Personal.cs" />
-    <Compile Include="Formularios\Consultas\FrmConsulta1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Consultas\FrmConsulta1.Designer.cs">
-      <DependentUpon>FrmConsulta1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -311,11 +305,23 @@
     <Compile Include="Formularios\FrmBuscador.Designer.cs">
       <DependentUpon>FrmBuscador.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Consultas\FrmConsulta1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Consultas\FrmConsulta1.Designer.cs">
+      <DependentUpon>FrmConsulta1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Consultas\FrmMote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Consultas\FrmMote.Designer.cs">
+      <DependentUpon>FrmMote.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmPrincipal.cs">
       <SubType>Form</SubType>
@@ -325,35 +331,25 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RcTan1DataSet.cs">
-      <DependentUpon>RcTan1DataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="RcTan1DataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RcTan1DataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="RcTan1DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RcTan1DataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="RcTan1DataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RcTan1DataSet2.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Formularios\Consultas\FrmConsulta1.resx">
-      <DependentUpon>FrmConsulta1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmBuscador.resx">
       <DependentUpon>FrmBuscador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Consultas\FrmConsulta1.resx">
+      <DependentUpon>FrmConsulta1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Consultas\FrmMote.resx">
+      <DependentUpon>FrmMote.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
@@ -396,28 +392,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="RcTan1DataSet.xsc">
-      <DependentUpon>RcTan1DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="RcTan1DataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>RcTan1DataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="RcTan1DataSet.xss">
-      <DependentUpon>RcTan1DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="RcTan1DataSet1.xsc">
-      <DependentUpon>RcTan1DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="RcTan1DataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>RcTan1DataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="RcTan1DataSet1.xss">
-      <DependentUpon>RcTan1DataSet1.xsd</DependentUpon>
-    </None>
     <None Include="RcTan1DataSet2.xsc">
       <DependentUpon>RcTan1DataSet2.xsd</DependentUpon>
     </None>

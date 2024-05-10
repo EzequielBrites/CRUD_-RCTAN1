@@ -104,6 +104,7 @@
             this.btnMote.TabIndex = 4;
             this.btnMote.Text = "Mote";
             this.btnMote.UseVisualStyleBackColor = true;
+            this.btnMote.Click += new System.EventHandler(this.btnMote_Click);
             // 
             // btnAtras
             // 
@@ -166,7 +167,13 @@
             this.cboConsultas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboConsultas.FormattingEnabled = true;
             this.cboConsultas.Items.AddRange(new object[] {
-            "Listado de personal"});
+            "Listado de personal",
+            "Listado de personal por rol de combate",
+            "Listado de personal por rol administrativo",
+            "Listado de SubOficiales (subalternos)",
+            "Listado de SubOficiales (superiores)",
+            "Listado de Oficiales",
+            "Listado de Soldados Voluntarios"});
             this.cboConsultas.Location = new System.Drawing.Point(223, 221);
             this.cboConsultas.Name = "cboConsultas";
             this.cboConsultas.Size = new System.Drawing.Size(261, 28);

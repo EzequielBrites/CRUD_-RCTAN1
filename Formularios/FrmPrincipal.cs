@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CRUD_RCTAN1.Formularios.Consultas;
+
 
 namespace CRUD_RCTAN1.Formularios
 {
@@ -100,6 +100,13 @@ namespace CRUD_RCTAN1.Formularios
               
 
             
+        }
+
+        private void btnMote_Click(object sender, EventArgs e)
+        {
+            FrmMote carga = new FrmMote();
+            ////this.Hide();
+            carga.ShowDialog();
         }
     }
 }
