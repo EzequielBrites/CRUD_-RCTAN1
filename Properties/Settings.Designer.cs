@@ -33,5 +33,16 @@ namespace CRUD_RCTAN1.Properties {
                 return ((string)(this["RcTan1ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=operaciones1.database.windows.net;Initial Catalog=RcTan1;User ID=Oper" +
+            "aciones")]
+        public string RcTan1ConnectionString1 {
+            get {
+                return ((string)(this["RcTan1ConnectionString1"]));
+            }
+        }
     }
 }

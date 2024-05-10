@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CRUD_RCTAN1.Formularios.Consultas;
 
 namespace CRUD_RCTAN1.Formularios
 {
@@ -20,6 +21,7 @@ namespace CRUD_RCTAN1.Formularios
             btnCursillos.Visible = false;
             btnExamenes.Visible = false;
             btnAtras.Visible = false;
+            btnCargarListado.Visible = false;
         }
 
         private void btnCargaPersonal_Click(object sender, EventArgs e)
@@ -62,6 +64,8 @@ namespace CRUD_RCTAN1.Formularios
             btnAtras.Visible = false;
             btnCursillos.Visible = false;
             btnExamenes.Visible = false;
+            cboConsultas.Visible=false;
+            btnCargarListado.Visible=false;
         }
 
         private void btnEducacion_Click(object sender, EventArgs e)
@@ -77,14 +81,27 @@ namespace CRUD_RCTAN1.Formularios
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             cboConsultas.Visible = true ;
+            cboConsultas.SelectedIndex = -1;
         }
 
         private void cboConsultas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboConsultas.SelectedIndex==0) 
-            {
+            btnCargarListado.Visible = true;
             
+        }
+
+        private void btnCargarListado_Click(object sender, EventArgs e)
+        {
+            if (cboConsultas.SelectedIndex == 0) 
+            {
+
+                FrmConsulta1 carga = new FrmConsulta1();
+                ////this.Hide();
+                carga.ShowDialog();
             }
+                
+
+            
         }
     }
 }

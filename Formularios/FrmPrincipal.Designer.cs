@@ -42,6 +42,7 @@
             this.btnCursillos = new System.Windows.Forms.Button();
             this.btnExamenes = new System.Windows.Forms.Button();
             this.cboConsultas = new System.Windows.Forms.ComboBox();
+            this.btnCargarListado = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -172,6 +173,16 @@
             this.cboConsultas.TabIndex = 10;
             this.cboConsultas.SelectedIndexChanged += new System.EventHandler(this.cboConsultas_SelectedIndexChanged);
             // 
+            // btnCargarListado
+            // 
+            this.btnCargarListado.Location = new System.Drawing.Point(361, 312);
+            this.btnCargarListado.Name = "btnCargarListado";
+            this.btnCargarListado.Size = new System.Drawing.Size(123, 46);
+            this.btnCargarListado.TabIndex = 11;
+            this.btnCargarListado.Text = "Mostrar";
+            this.btnCargarListado.UseVisualStyleBackColor = true;
+            this.btnCargarListado.Click += new System.EventHandler(this.btnCargarListado_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -179,6 +190,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BackgroundImage = global::CRUD_RCTAN1.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(697, 562);
+            this.Controls.Add(this.btnCargarListado);
             this.Controls.Add(this.cboConsultas);
             this.Controls.Add(this.btnExamenes);
             this.Controls.Add(this.btnCursillos);
@@ -215,5 +227,6 @@
         private System.Windows.Forms.Button btnCursillos;
         private System.Windows.Forms.Button btnExamenes;
         private System.Windows.Forms.ComboBox cboConsultas;
+        private System.Windows.Forms.Button btnCargarListado;
     }
 }

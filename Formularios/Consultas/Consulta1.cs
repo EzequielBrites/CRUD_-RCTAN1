@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace CRUD_RCTAN1.Formularios.Consultas
 {
-    public partial class Consulta1 : Form
+    public partial class FrmConsulta1 : Form
     {
-        public Consulta1()
+        public FrmConsulta1()
         {
             InitializeComponent();
+        }
+
+        private void Consulta1_Load(object sender, EventArgs e)
+        {
+
+
+            this.reportViewer1.RefreshReport();
         }
     }
 }
