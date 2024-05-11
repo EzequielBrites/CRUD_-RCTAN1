@@ -572,18 +572,18 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="RcTan1DataSet">
+    <DataSource Name="RcTan1DataSet2">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>fbdcf9a2-fd18-496b-a858-23534a6b2e83</rd:DataSourceID>
+      <rd:DataSourceID>ebe3b6ab-bb40-48db-ba97-74c419794bdb</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet2">
       <Query>
-        <DataSourceName>RcTan1DataSet</DataSourceName>
+        <DataSourceName>RcTan1DataSet2</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>

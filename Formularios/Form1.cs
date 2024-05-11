@@ -208,7 +208,7 @@ namespace CRUD_RCTAN1
                 
                 p.Grado = cboGrados.SelectedIndex + 4;
             }
-            if (cboTipos.SelectedIndex == 3)
+            if (cboTipos.SelectedIndex == 2)
             {
                 
                 p.Grado = cboGrados.SelectedIndex + 11;
@@ -301,65 +301,76 @@ namespace CRUD_RCTAN1
 
                 DataTable tabla = new DataTable();
                 tabla = accesoBD.Consultar_Persona("sp_consultar_persona", int.Parse(txtDni.Text));
-
-                foreach (DataRow fila in tabla.Rows)
+                if (tabla.Rows.Count > 0)
                 {
-                    persona.Dni = Int32.Parse(fila["Dni"].ToString());
-                    persona.Nombre = fila["Nombre"].ToString();
-                    persona.Apellido = fila["Apellido"].ToString();
-                    persona.FechaNacimiento = DateTime.Parse(fila["fecha_nac"].ToString());
-                    if (Int32.Parse(fila["id_sexo"].ToString()) == 1)
+
+                    foreach (DataRow fila in tabla.Rows)
                     {
-                        persona.Sexo = 1;
+                        persona.Dni = Int32.Parse(fila["Dni"].ToString());
+                        persona.Nombre = fila["Nombre"].ToString();
+                        persona.Apellido = fila["Apellido"].ToString();
+                        persona.FechaNacimiento = DateTime.Parse(fila["fecha_nac"].ToString());
+                        if (Int32.Parse(fila["id_sexo"].ToString()) == 1)
+                        {
+                            persona.Sexo = 1;
+                        }
+                        else
+                        {
+                            persona.Sexo = 2;
+                        }
+                        persona.Grado = Int32.Parse(fila["id_grado"].ToString());
+                        persona.RolAdministrativo = fila["rol_administrativo"].ToString();
+                        persona.RolCombate = fila["rol_combate"].ToString();
+                        persona.Seccion = Int32.Parse(fila["id_seccion"].ToString());
+                        persona.Arma = Int32.Parse(fila["id_arma"].ToString());
+                        persona.SubUnidad = Int32.Parse(fila["id_subunidad"].ToString());
+
+                    }
+
+                    txtDni.Text = persona.Dni.ToString();
+                    txtNombre.Text = persona.Nombre.ToString();
+                    txtApellido.Text = persona.Apellido.ToString();
+                    dtpFechaNacimiento.Text = persona.FechaNacimiento.ToString("dd/MM/yyyy");
+                    if (persona.Sexo == 1)
+                    {
+                        rbMasculino.Checked = true;
                     }
                     else
                     {
-                        persona.Sexo = 2;
+                        rbFemenino.Checked = true;
                     }
-                    persona.Grado = Int32.Parse(fila["id_grado"].ToString());
-                    persona.RolAdministrativo = fila["rol_administrativo"].ToString();
-                    persona.RolCombate = fila["rol_combate"].ToString();
-                    persona.Seccion = Int32.Parse(fila["id_seccion"].ToString());
-                    persona.Arma = Int32.Parse(fila["id_arma"].ToString());
-                    persona.SubUnidad = Int32.Parse(fila["id_subunidad"].ToString());
 
-                }
+                    if (persona.Grado >= 1 && persona.Grado <= 3)
+                    {
+                        cboTipos.SelectedIndex = 0;
+                        cboGrados.SelectedIndex = persona.Grado - 1;
+                    }
+                    if (persona.Grado >= 4 && persona.Grado <= 10)
+                    {
+                        cboTipos.SelectedIndex = 1;
+                        cboGrados.SelectedIndex = persona.Grado - 4;
+                    }
+                    if (persona.Grado >= 11 && persona.Grado <= 16)
+                    {
+                        cboTipos.SelectedIndex = 2;
+                        cboGrados.SelectedIndex = persona.Grado - 11;
+                    }
 
-                txtDni.Text = persona.Dni.ToString();
-                txtNombre.Text = persona.Nombre.ToString();
-                txtApellido.Text = persona.Apellido.ToString();
-                dtpFechaNacimiento.Text = persona.FechaNacimiento.ToString("dd/MM/yyyy");
-                if (persona.Sexo == 1)
-                {
-                    rbMasculino.Checked = true;
+
+
+
+                    txtRolAdmin.Text = persona.RolAdministrativo;
+                    txtRolComb.Text = persona.RolCombate;
+                    cboSeccion.SelectedIndex = persona.Seccion - 1;
+                    cboArmas.SelectedIndex = persona.Arma - 1;
+                    cboSubUnidad.SelectedIndex = persona.SubUnidad - 1;
+                    cboGrados.Enabled = false;
                 }
                 else
                 {
-                    rbFemenino.Checked = true;
+                    MessageBox.Show("Debe ingresar un DNI correcto!", "SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
                 }
-
-                if (persona.Grado >= 1 && persona.Grado <= 3)
-                {
-                    cboTipos.SelectedIndex = 0;
-                    cboGrados.SelectedIndex = persona.Grado - 1;
-                }
-                if (persona.Grado >= 4 && persona.Grado <= 10)
-                {
-                    cboTipos.SelectedIndex = 1;
-                    cboGrados.SelectedIndex = persona.Grado - 4;
-                }
-                if (persona.Grado >= 11 && persona.Grado <= 16)
-                {
-                    cboTipos.SelectedIndex = 2;
-                    cboGrados.SelectedIndex = persona.Grado - 11;
-                }
-
-                txtRolAdmin.Text = persona.RolAdministrativo;
-                txtRolComb.Text = persona.RolCombate;
-                cboSeccion.SelectedIndex = persona.Seccion-1;
-                cboArmas.SelectedIndex = persona.Arma - 1;
-                cboSubUnidad.SelectedIndex= persona.SubUnidad-1;
-                cboGrados.Enabled = false;
 
             }
 
@@ -391,7 +402,7 @@ namespace CRUD_RCTAN1
             if (accesoBD.actualizarBD("sp_eliminar_persona", lparametros) > 0)
 
             {
-                MessageBox.Show("Se elimino correctamente");
+                
                 limpiar();
                 txtDni.Enabled = true;
                 Habilitar(false);
@@ -403,6 +414,13 @@ namespace CRUD_RCTAN1
                 btnBuscar.Visible = true;
                 btnBuscar.Enabled = true;
                 lparametros.Clear();
+            }
+            else 
+            {
+
+                MessageBox.Show("Ingrese un Dni correcto!");
+
+
             }
             
         }

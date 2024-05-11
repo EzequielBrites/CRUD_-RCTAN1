@@ -19,8 +19,11 @@ namespace CRUD_RCTAN1.Formularios
 
         private void FrmMote_Load(object sender, EventArgs e)
         {
-            
+            // TODO: esta línea de código carga datos en la tabla 'rcTan1DataSet21.sp_listar_personal_datos' Puede moverla o quitarla según sea necesario.
+            this.sp_listar_personal_datosTableAdapter.Fill(this.rcTan1DataSet21.sp_listar_personal_datos);
 
+
+            this.reportViewer1.RefreshReport();
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
