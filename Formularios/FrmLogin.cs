@@ -26,6 +26,7 @@ namespace CRUD_RCTAN1.Formularios
         {
             
             txtContraseña.PasswordChar = '*';
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -42,19 +43,29 @@ namespace CRUD_RCTAN1.Formularios
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            
-            //int resultado = accesoBD.VerificarUsuario(txtUsuario.Text, txtContraseña.Text);
-            //if (resultado == 1)
-            //{
+
+            int resultado = accesoBD.VerificarUsuario(txtUsuario.Text, txtContraseña.Text);
+            if (resultado == 1)
+            {
                 FrmPrincipal carga = new FrmPrincipal();
                 this.Hide();
                 carga.ShowDialog();
-            //}
-            //else if (resultado == 0)
-            //{
-            //    MessageBox.Show("Usuario o contraseña incorrecta");
+        }
+            else if (resultado == 0)
+            {
+                MessageBox.Show("Usuario o contraseña incorrecta");
                 
-            //}
+            }
+
+}
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }

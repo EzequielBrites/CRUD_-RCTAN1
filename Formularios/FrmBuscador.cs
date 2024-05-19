@@ -13,17 +13,18 @@ using System.Windows.Forms;
 
 namespace CRUD_RCTAN1.Formularios
 {
-    public partial class Buscador : Form
+    public partial class FrmConsultas : Form
     {
         Dbhelper accesoBD = new Dbhelper();
         Personal persona = new Personal();
-        public Buscador()
+        public FrmConsultas()
         {
             InitializeComponent();
         }
 
         private void Buscador_Load(object sender, EventArgs e)
         {
+            txtdni.Enabled = false;
 
         }
 
@@ -79,6 +80,16 @@ namespace CRUD_RCTAN1.Formularios
 
             
             
+        }
+
+        private void cboConsultas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboListados.SelectedIndex == 0)
+            {
+                txtdni.Enabled = true;
+            
+            
+            }
         }
     }
 }

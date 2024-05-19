@@ -61,6 +61,16 @@ namespace CRUD_RCTAN1.Properties {
         }
         
         /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _5637688 {
+            get {
+                object obj = ResourceManager.GetObject("5637688", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Server=tcp:operaciones1.database.windows.net,1433;Initial Catalog=RcTan1;Persist Security Info=False;User ID=Operaciones;Password=114057Tup;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;.
         /// </summary>
         internal static string cadenaConexion {
@@ -75,6 +85,36 @@ namespace CRUD_RCTAN1.Properties {
         internal static System.Drawing.Bitmap fondo {
             get {
                 object obj = ResourceManager.GetObject("fondo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondoliso {
+            get {
+                object obj = ResourceManager.GetObject("fondoliso", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondoliso2 {
+            get {
+                object obj = ResourceManager.GetObject("fondoliso2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo {
+            get {
+                object obj = ResourceManager.GetObject("Logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

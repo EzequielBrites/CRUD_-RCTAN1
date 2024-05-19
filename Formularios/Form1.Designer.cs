@@ -72,6 +72,13 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnGuardarEdicion = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.mspCargaPersonal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -490,6 +497,90 @@
             this.btnGuardarEdicion.UseVisualStyleBackColor = true;
             this.btnGuardarEdicion.Click += new System.EventHandler(this.btnGuardarEdicion_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Image = global::CRUD_RCTAN1.Properties.Resources.fondoliso2;
+            this.label2.Location = new System.Drawing.Point(372, 88);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(20, 25);
+            this.label2.TabIndex = 46;
+            this.label2.Text = "*";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Image = global::CRUD_RCTAN1.Properties.Resources.fondoliso2;
+            this.label1.Location = new System.Drawing.Point(372, 147);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(20, 25);
+            this.label1.TabIndex = 47;
+            this.label1.Text = "*";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Image = global::CRUD_RCTAN1.Properties.Resources.fondoliso2;
+            this.label3.Location = new System.Drawing.Point(372, 206);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(20, 25);
+            this.label3.TabIndex = 48;
+            this.label3.Text = "*";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Image = global::CRUD_RCTAN1.Properties.Resources.fondoliso2;
+            this.label4.Location = new System.Drawing.Point(1000, 87);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(20, 25);
+            this.label4.TabIndex = 49;
+            this.label4.Text = "*";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Image = global::CRUD_RCTAN1.Properties.Resources.fondoliso2;
+            this.label5.Location = new System.Drawing.Point(1000, 270);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(20, 25);
+            this.label5.TabIndex = 50;
+            this.label5.Text = "*";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Image = global::CRUD_RCTAN1.Properties.Resources.fondoliso2;
+            this.label6.Location = new System.Drawing.Point(1000, 338);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(20, 25);
+            this.label6.TabIndex = 51;
+            this.label6.Text = "*";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Image = global::CRUD_RCTAN1.Properties.Resources.fondoliso2;
+            this.label7.Location = new System.Drawing.Point(732, 385);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(20, 25);
+            this.label7.TabIndex = 52;
+            this.label7.Text = "*";
+            // 
             // FrmCargaPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -497,6 +588,13 @@
             this.BackColor = System.Drawing.SystemColors.Info;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1229, 515);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnGuardarEdicion);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnEliminar);
@@ -585,6 +683,13 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnGuardarEdicion;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }
 
